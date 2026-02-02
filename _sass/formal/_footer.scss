@@ -1,0 +1,82 @@
+.footer {
+  background: $color-bg-dark;
+  color: $color-text-inverse;
+  padding: $spacing-3xl 0 $spacing-xl;
+  margin-top: $spacing-4xl;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xl;
+  margin-bottom: $spacing-2xl;
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.footer-brand {
+  .footer-logo {
+    font-family: $font-heading;
+    font-size: $font-size-2xl;
+    font-weight: 600;
+    display: block;
+    margin-bottom: $spacing-xs;
+  }
+
+  .footer-tagline {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: $font-size-sm;
+  }
+}
+
+.footer-links {
+  display: flex;
+  gap: $spacing-lg;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  color: $color-text-inverse;
+  font-size: $font-size-sm;
+  transition: opacity $transition-fast;
+
+  &:hover {
+    opacity: 0.8;
+    color: $color-text-inverse;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.footer-bottom {
+  padding-top: $spacing-xl;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  font-size: $font-size-sm;
+  color: rgba(255, 255, 255, 0.6);
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.footer-switch a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: underline;
+
+  &:hover {
+    color: $color-text-inverse;
+  }
+}

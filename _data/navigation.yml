@@ -1,0 +1,29 @@
+# Navigation for formal version
+formal:
+  - title: Home
+    url: /
+  - title: About
+    url: /about/
+  - title: Services
+    url: /services/
+  - title: Testimonials
+    url: /testimonials/
+  - title: Pricing
+    url: /pricing/
+  - title: Contact
+    url: /contact/
+
+# Navigation for fun version
+fun:
+  - title: Home
+    url: /fun/
+  - title: About
+    url: /fun/about/
+  - title: Services
+    url: /fun/services/
+  - title: Testimonials
+    url: /fun/testimonials/
+  - title: Pricing
+    url: /fun/pricing/
+  - title: Contact
+    url: /fun/contact/

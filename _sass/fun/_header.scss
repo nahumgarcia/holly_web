@@ -1,0 +1,131 @@
+.header {
+  position: relative;
+  z-index: 100;
+  background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, transparent 100%);
+  padding-bottom: $spacing-md;
+}
+
+.welcome-marquee {
+  background: linear-gradient(90deg, $color-neon-purple, $color-neon-pink, $color-neon-cyan);
+  color: $color-text;
+  padding: $spacing-xs;
+  font-size: $font-size-sm;
+  font-weight: bold;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $spacing-lg 0;
+  gap: $spacing-md;
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.logo {
+  text-align: center;
+  text-decoration: none;
+
+  &:hover {
+    .logo-text {
+      text-shadow: 0 0 20px $color-neon-pink, 0 0 40px $color-neon-pink;
+    }
+  }
+}
+
+.logo-text {
+  display: block;
+  font-family: $font-heading;
+  font-size: $font-size-2xl;
+  color: $color-neon-pink;
+  text-shadow: 0 0 10px $color-neon-pink;
+  transition: text-shadow 0.3s;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-3xl;
+  }
+}
+
+.logo-subtitle {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-neon-yellow;
+  text-shadow: 0 0 5px $color-neon-yellow;
+}
+
+.nav-toggle {
+  display: block;
+  background: $color-neon-green;
+  color: $color-bg;
+  border: 2px solid $color-neon-green;
+  padding: $spacing-xs $spacing-md;
+  font-family: $font-heading;
+  font-size: $font-size-base;
+  cursor: pointer;
+  box-shadow: 0 0 10px $color-neon-green;
+
+  @media (min-width: $breakpoint-md) {
+    display: none;
+  }
+
+  &:hover {
+    background: $color-bg;
+    color: $color-neon-green;
+  }
+}
+
+.nav {
+  display: none;
+  width: 100%;
+
+  @media (min-width: $breakpoint-md) {
+    display: block;
+    width: auto;
+  }
+
+  &--open {
+    display: block;
+  }
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-sm;
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    gap: $spacing-md;
+  }
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  display: block;
+  padding: $spacing-xs $spacing-sm;
+  font-family: $font-heading;
+  font-size: $font-size-base;
+  color: $color-neon-cyan;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+
+  &:hover,
+  &.active {
+    color: $color-neon-pink;
+    border-color: $color-neon-pink;
+    box-shadow: 0 0 10px $color-neon-pink;
+    text-shadow: 0 0 5px $color-neon-pink;
+  }
+}

@@ -1,0 +1,62 @@
+---
+layout: fun
+title: Home
+description: English classes for engineers and tech professionals - the FUN way!
+permalink: /fun/
+---
+
+<section class="hero">
+  <div class="container">
+    <h1 class="hero-title sparkle">~* Welcome to Holly's English Zone! *~</h1>
+    <p class="hero-subtitle">{{ site.data.content.hero.tagline }}</p>
+    <div class="hero-description">
+      {{ site.data.content.hero.description | markdownify }}
+    </div>
+    <a href="{{ '/fun/contact/' | relative_url }}" class="btn btn--primary">✨ Get in Touch! ✨</a>
+  </div>
+</section>
+
+<div class="divider">★ ☆ ★ ☆ ★</div>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>{{ site.data.content.pain_points.intro }}</h2>
+    </div>
+
+    <div class="pain-points">
+      {% for item in site.data.content.pain_points.items %}
+      <div class="pain-point">
+        <div class="pain-point-icon">
+          <img src="{{ '/assets/images/icons/' | relative_url }}{{ item.icon }}" alt="">
+        </div>
+        <p class="pain-point-text">{{ item.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="callout callout--warning">
+      <p>😰 {{ site.data.content.pain_points.problem }}</p>
+    </div>
+
+    <div class="callout callout--success">
+      <p>🐱 {{ site.data.content.pain_points.solution }}</p>
+    </div>
+
+    <div class="callout callout--highlight">
+      <p>🏆 {{ site.data.content.pain_points.outcome }}</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider">🐱 🌟 🐱 🌟 🐱</div>
+
+<section class="section">
+  <div class="container">
+    <div class="cta">
+      <h2>Ready to level up your English? 🚀</h2>
+      <p>Let's make learning fun and effective!</p>
+      <a href="{{ '/fun/contact/' | relative_url }}" class="btn btn--primary">Contact Me! 💌</a>
+    </div>
+  </div>
+</section>

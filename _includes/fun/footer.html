@@ -1,0 +1,43 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-gifs">
+      <img src="https://web.archive.org/web/20091027065803/http://hk.geocities.com/pinkminimee/underconstruction2.gif" alt="Under construction" class="construction-gif">
+      <img src="https://web.archive.org/web/20091027065803/http://hk.geocities.com/pinkminimee/ani_cat2.gif" alt="Cute cat" class="cat-gif">
+      <img src="https://web.archive.org/web/20091027065803/http://hk.geocities.com/pinkminimee/underconstruction2.gif" alt="Under construction" class="construction-gif">
+    </div>
+
+    <div class="guestbook">
+      <p>~ Sign my guestbook! ~</p>
+      <a href="{{ site.author.linkedin }}" target="_blank" rel="noopener" class="guestbook-link">
+        📝 Actually it's LinkedIn but same energy! 📝
+      </a>
+    </div>
+
+    <div class="visitor-counter">
+      <p>You are visitor #</p>
+      <div class="counter-display">
+        <span id="visitor-count">1337</span>
+      </div>
+      <p>(not really, this is just for vibes)</p>
+    </div>
+
+    <marquee behavior="scroll" direction="right" class="footer-marquee">
+      🐱 Thanks for visiting! 🐱 Made with 💖 and lots of ☕ 🐱 Best viewed in Netscape Navigator 🐱
+    </marquee>
+
+    <div class="footer-links">
+      <a href="{{ '/' | relative_url }}" class="switch-link">🔗 Boring Professional Version 🔗</a>
+    </div>
+
+    <p class="copyright">© {{ 'now' | date: "%Y" }} Holly Richmond | This page is Y2K compliant!</p>
+  </div>
+</footer>
+
+<script>
+  // Fake visitor counter that increments
+  let count = 1337;
+  setInterval(() => {
+    count += Math.floor(Math.random() * 3);
+    document.getElementById('visitor-count').textContent = count;
+  }, 5000);
+</script>

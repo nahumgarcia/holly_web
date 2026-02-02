@@ -1,0 +1,79 @@
+---
+layout: formal
+title: Pricing
+description: Transparent pricing for Holly Richmond's English classes - individual and group options available.
+---
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h1>{{ site.data.content.pricing.title }}</h1>
+      <p>{{ site.data.content.pricing.note }}</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card pricing-card--featured">
+        <h3 class="pricing-title">{{ site.data.content.pricing.individual.title }}</h3>
+        <table class="pricing-table">
+          {% for plan in site.data.content.pricing.individual.plans %}
+          <tr>
+            <td>{{ plan.name }}</td>
+            <td>&euro;{{ plan.price }}/{{ plan.unit }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+
+      <div class="pricing-card">
+        <h3 class="pricing-title">{{ site.data.content.pricing.group.title }}</h3>
+        <table class="pricing-table">
+          {% for plan in site.data.content.pricing.group.plans %}
+          <tr>
+            <td>{{ plan.name }}</td>
+            <td>&euro;{{ plan.price }}/{{ plan.unit }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container container--narrow">
+    <h2 style="text-align: center; margin-bottom: 2rem;">Frequently Asked Questions</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3 class="faq-question">{{ site.data.content.services.duration.question }}</h3>
+        <div class="faq-answer">
+          {{ site.data.content.services.duration.answer | markdownify }}
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">{{ site.data.content.services.missed.question }}</h3>
+        <div class="faq-answer">
+          {{ site.data.content.services.missed.answer | markdownify }}
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">{{ site.data.content.services.enroll.question }}</h3>
+        <div class="faq-answer">
+          {{ site.data.content.services.enroll.answer | markdownify }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta">
+      <h2>Ready to invest in your English?</h2>
+      <p>Contact me to discuss which option is best for you.</p>
+      <a href="{{ '/contact/' | relative_url }}" class="btn btn--large">Contact Me</a>
+    </div>
+  </div>
+</section>

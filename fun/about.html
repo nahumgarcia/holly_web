@@ -1,0 +1,71 @@
+---
+layout: fun
+title: About
+description: Learn about Holly Richmond - your awesome English teacher!
+permalink: /fun/about/
+---
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h1>~* About Me *~</h1>
+    </div>
+
+    <div class="neon-box">
+      <p class="hero-subtitle" style="text-align: center; margin-bottom: 1.5rem;">
+        {{ site.data.content.about.intro }}
+      </p>
+
+      {{ site.data.content.about.background | markdownify }}
+
+      <h3 style="margin-top: 2rem; margin-bottom: 1rem;">✨ My Approach ✨</h3>
+      {{ site.data.content.about.approach | markdownify }}
+    </div>
+  </div>
+</section>
+
+<div class="divider">★ ☆ ★ ☆ ★</div>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>🐱 {{ site.data.content.stories.title }} 🐱</h2>
+    </div>
+
+    {% for story in site.data.content.stories.items %}
+    <div class="story">
+      <h3 class="story-title">{{ story.title }}</h3>
+
+      <div class="story-section">
+        <h4>🎯 {{ story.goal.title }}</h4>
+        {{ story.goal.text | markdownify }}
+      </div>
+
+      <div class="story-section">
+        <h4>📚 {{ story.method.title }}</h4>
+        {{ story.method.text | markdownify }}
+      </div>
+
+      <div class="story-section">
+        <h4>✏️ {{ story.correction.title }}</h4>
+        {{ story.correction.text | markdownify }}
+      </div>
+
+      <div class="story-section">
+        <h4>🏆 {{ story.results.title }}</h4>
+        {{ story.results.text | markdownify }}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta">
+      <h2>Want to be my next success story? 🌟</h2>
+      <p>Let's chat about how I can help you!</p>
+      <a href="{{ '/fun/contact/' | relative_url }}" class="btn btn--primary">Contact Me! 💌</a>
+    </div>
+  </div>
+</section>

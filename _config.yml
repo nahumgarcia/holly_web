@@ -1,0 +1,53 @@
+# Site settings
+title: Holly Richmond - English Classes
+description: English classes for engineers and tech professionals. Improve your workplace communication with a US-licensed ESL teacher.
+url: "" # Will be set when domain is purchased
+baseurl: ""
+
+# Author
+author:
+  name: Holly Richmond
+  linkedin: https://www.linkedin.com/in/holly-richmond/
+
+# Contact
+contact_form: "https://docs.google.com/forms/d/e/1FAIpQLScBNAAxEX5PgtMPvNdirFNmH7P3UJQtoKWr2np6XM6tscVaaA/viewform"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Sass
+sass:
+  style: compressed
+  sass_dir: _sass
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+  - contenido-notion
+  - requisitos.md
+
+# Collections
+collections_dir: .
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "formal"
+  - scope:
+      path: "fun"
+      type: "pages"
+    values:
+      layout: "fun"

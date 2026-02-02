@@ -1,0 +1,57 @@
+---
+layout: formal
+title: Home
+description: English classes for engineers and tech professionals. Improve your workplace communication with US-licensed ESL teacher Holly Richmond.
+---
+
+<section class="hero">
+  <div class="container">
+    <h1 class="hero-title">{{ site.data.content.hero.greeting }}</h1>
+    <p class="hero-subtitle">{{ site.data.content.hero.tagline }}</p>
+    <div class="hero-description">
+      {{ site.data.content.hero.description | markdownify }}
+    </div>
+    <a href="{{ '/contact/' | relative_url }}" class="btn btn--primary btn--large">Get in Touch</a>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-header">
+      <h2>{{ site.data.content.pain_points.intro }}</h2>
+    </div>
+
+    <div class="pain-points">
+      {% for item in site.data.content.pain_points.items %}
+      <div class="pain-point">
+        <div class="pain-point-icon">
+          <img src="{{ '/assets/images/icons/' | relative_url }}{{ item.icon }}" alt="">
+        </div>
+        <p class="pain-point-text">{{ item.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="callout" style="margin-top: 3rem;">
+      <p><strong>{{ site.data.content.pain_points.problem }}</strong></p>
+    </div>
+
+    <div class="callout callout--success">
+      <p>{{ site.data.content.pain_points.solution }}</p>
+    </div>
+
+    <div class="callout callout--highlight">
+      <p>{{ site.data.content.pain_points.outcome }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta">
+      <h2>Ready to improve your English?</h2>
+      <p>Let's work together to help you communicate more confidently in the workplace.</p>
+      <a href="{{ '/contact/' | relative_url }}" class="btn btn--large">Contact Me</a>
+    </div>
+  </div>
+</section>
