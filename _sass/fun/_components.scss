@@ -334,6 +334,7 @@
   box-shadow: 0 0 15px rgba($color-neon-green, 0.3);
   display: flex;
   flex-direction: column;
+  height: 100%;
 
   &--featured {
     border-color: $color-neon-pink;
