@@ -164,6 +164,27 @@
   }
 }
 
+.nav-btn {
+  display: inline-block;
+  padding: $spacing-xs $spacing-lg;
+  font-family: $font-heading;
+  font-size: $font-size-base;
+  color: $color-bg;
+  text-decoration: none;
+  background: $color-neon-green;
+  border: 2px solid $color-neon-green;
+  border-radius: 50px;
+  box-shadow: 0 0 15px $color-neon-green;
+  transition: all 0.3s;
+
+  &:hover {
+    background: $color-neon-pink;
+    border-color: $color-neon-pink;
+    box-shadow: 0 0 25px $color-neon-pink;
+    transform: scale(1.1);
+  }
+}
+
 // GIF Parade / Emoji Parade
 .gif-parade {
   display: flex;

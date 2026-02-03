@@ -5,58 +5,174 @@ description: English classes for engineers and tech professionals - the FUN way!
 permalink: /fun/
 ---
 
+<!-- Hero -->
 <section class="hero">
   <div class="container">
-    <h1 class="hero-title sparkle">~* Welcome to Holly's English Zone! *~</h1>
-    <p class="hero-subtitle">{{ site.data.content.hero.tagline }}</p>
+    <h1 class="hero-title sparkle">~* {{ site.data.content.hero.greeting }} *~</h1>
+    <p class="hero-subtitle rainbow">{{ site.data.content.hero.tagline }}</p>
     <div class="hero-description">
       {{ site.data.content.hero.description | markdownify }}
+      {{ site.data.content.about.approach | markdownify }}
     </div>
-    <a href="{{ '/fun/contact/' | relative_url }}" class="btn btn--primary">✨ Get in Touch! ✨</a>
+    <a href="#services" class="btn btn--outline blink">✨ My services ✨</a>
   </div>
 </section>
 
 <div class="divider">★ ☆ ★ ☆ ★</div>
 
-<section class="section">
+<!-- Pain Points -->
+<section class="section section--alt">
   <div class="container">
     <div class="section-header">
-      <h2>{{ site.data.content.pain_points.intro }}</h2>
+      <h2 class="fire-text">{{ site.data.content.pain_points.intro }}</h2>
     </div>
 
     <div class="pain-points">
-      {% for item in site.data.content.pain_points.items %}
       <div class="pain-point">
         <div class="pain-point-icon">
-          <img src="{{ '/assets/images/icons/' | relative_url }}{{ item.icon }}" alt="">
+          <span class="animated-emoji bounce-emoji">📝</span>
         </div>
-        <p class="pain-point-text">{{ item.text }}</p>
+        <p class="pain-point-text">Often people don't understand you the first time when you say something.</p>
       </div>
-      {% endfor %}
+
+      <div class="pain-point">
+        <div class="pain-point-icon">
+          <span class="animated-emoji bounce-emoji">👥</span>
+        </div>
+        <p class="pain-point-text">You feel self-conscious when participating in meetings, forming a phrase you've never said before, or explaining complex processes.</p>
+      </div>
+
+      <div class="pain-point">
+        <div class="pain-point-icon">
+          <span class="animated-emoji bounce-emoji">❓</span>
+        </div>
+        <p class="pain-point-text">You get stuck when trying to answer tricky questions from colleagues or clients.</p>
+      </div>
+
+      <div class="pain-point">
+        <div class="pain-point-icon">
+          <span class="animated-emoji bounce-emoji">📧</span>
+        </div>
+        <p class="pain-point-text">You don't always feel confident writing professional sounding emails.</p>
+      </div>
     </div>
 
-    <div class="callout callout--warning">
-      <p>😰 {{ site.data.content.pain_points.problem }}</p>
-    </div>
-
-    <div class="callout callout--success">
-      <p>🐱 {{ site.data.content.pain_points.solution }}</p>
-    </div>
-
-    <div class="callout callout--highlight">
-      <p>🏆 {{ site.data.content.pain_points.outcome }}</p>
+    <div class="solution-block">
+      <p>{{ site.data.content.pain_points.problem }}</p>
+      <h3 class="rainbow">{{ site.data.content.pain_points.solution }}</h3>
+      <p>{{ site.data.content.pain_points.outcome }}</p>
     </div>
   </div>
 </section>
 
 <div class="divider">🐱 🌟 🐱 🌟 🐱</div>
 
-<section class="section">
+<!-- Student Stories -->
+<section class="section stories-highlight">
   <div class="container">
-    <div class="cta">
-      <h2>Ready to level up your English? 🚀</h2>
-      <p>Let's make learning fun and effective!</p>
-      <a href="{{ '/fun/contact/' | relative_url }}" class="btn btn--primary">Contact Me! 💌</a>
+    <div class="stories-section">
+      <h2 class="sparkle">~* Student Stories *~</h2>
+      <p class="stories-intro">Do you want to know how my classes are? Check these student stories!! <span class="blink">WOW!</span></p>
+      <div class="stories-buttons">
+        <button class="story-btn pulse" onclick="openModal('story1')">
+          <span class="story-btn-label">🌟 Student Story #1 🌟</span>
+          <span class="story-btn-arrow">→</span>
+        </button>
+        <button class="story-btn pulse" onclick="openModal('story2')">
+          <span class="story-btn-label">🌟 Student Story #2 🌟</span>
+          <span class="story-btn-arrow">→</span>
+        </button>
+      </div>
     </div>
   </div>
 </section>
+
+<div class="divider">✨ 💖 ✨ 💖 ✨</div>
+
+<!-- Services/Pricing -->
+<section class="section section--alt" id="services">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="fire-text">~* Services *~</h2>
+      <p>{{ site.data.content.pricing.note }}</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="services-card services-card--featured">
+        <h3 class="services-title sparkle">{{ site.data.content.pricing.individual.title }}</h3>
+        <table class="services-table">
+          {% for plan in site.data.content.pricing.individual.plans %}
+          <tr>
+            <td>{{ plan.name }}</td>
+            <td>&euro;{{ plan.price }}/{{ plan.unit }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+
+      <div class="services-card">
+        <h3 class="services-title">{{ site.data.content.pricing.group.title }}</h3>
+        <table class="services-table">
+          {% for plan in site.data.content.pricing.group.plans %}
+          <tr>
+            <td>{{ plan.name }}</td>
+            <td>&euro;{{ plan.price }}/{{ plan.unit }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modals for Student Stories -->
+{% for story in site.data.content.stories.items %}
+<div class="modal-overlay" id="story{{ forloop.index }}" onclick="closeModalOnOverlay(event, 'story{{ forloop.index }}')">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 class="rainbow">{{ story.title }}</h3>
+      <button class="modal-close" onclick="closeModal('story{{ forloop.index }}')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <h4>🎯 {{ story.goal.title }}</h4>
+      {{ story.goal.text | markdownify }}
+
+      <h4>📚 {{ story.method.title }}</h4>
+      {{ story.method.text | markdownify }}
+
+      <h4>✏️ {{ story.correction.title }}</h4>
+      {{ story.correction.text | markdownify }}
+
+      <h4>🏆 {{ story.results.title }}</h4>
+      {{ story.results.text | markdownify }}
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function closeModalOnOverlay(event, id) {
+    if (event.target.classList.contains('modal-overlay')) {
+      closeModal(id);
+    }
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.active').forEach(function(modal) {
+        modal.classList.remove('active');
+      });
+      document.body.style.overflow = '';
+    }
+  });
+</script>

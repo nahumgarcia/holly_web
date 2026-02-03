@@ -3,8 +3,65 @@
   z-index: 1;
   background: linear-gradient(0deg, rgba(0,0,0,0.98) 0%, transparent 100%);
   padding: $spacing-3xl 0 $spacing-xl;
-  margin-top: $spacing-3xl;
+  margin-top: 0;
   text-align: center;
+}
+
+// Testimonials in footer
+.testimonials-footer {
+  padding-bottom: $spacing-2xl;
+  margin-bottom: $spacing-2xl;
+  border-bottom: 3px dashed $color-neon-purple;
+
+  h3 {
+    margin-bottom: $spacing-xl;
+  }
+}
+
+.testimonials-grid {
+  display: grid;
+  gap: $spacing-xl;
+  text-align: left;
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.testimonial {
+  border: 2px solid $color-neon-purple;
+  padding: $spacing-xl;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 15px rgba($color-neon-purple, 0.3);
+}
+
+.testimonial-quote {
+  font-style: italic;
+  color: $color-text;
+  margin-bottom: $spacing-lg;
+  line-height: 1.7;
+  position: relative;
+}
+
+.testimonial-quote-icon {
+  font-size: 2rem;
+  margin-right: $spacing-sm;
+  filter: drop-shadow(0 0 5px $color-neon-cyan);
+}
+
+.testimonial-author {
+  border-top: 1px solid $color-neon-purple;
+  padding-top: $spacing-md;
+}
+
+.testimonial-name {
+  font-family: $font-heading;
+  font-weight: bold;
+}
+
+.testimonial-role {
+  font-size: $font-size-sm;
+  color: $color-text-dim;
 }
 
 // Construction Zone

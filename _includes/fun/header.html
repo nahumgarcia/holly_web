@@ -23,9 +23,15 @@
         <ul class="nav-list">
           {% for item in site.data.navigation.fun %}
           <li class="nav-item">
+            {% if item.button %}
+            <a href="{{ item.url | relative_url }}" class="nav-btn blink">
+              ✨ {{ item.title }} ✨
+            </a>
+            {% else %}
             <a href="{{ item.url | relative_url }}" class="nav-link {% if page.url == item.url %}active{% endif %}">
               ★ {{ item.title }} ★
             </a>
+            {% endif %}
           </li>
           {% endfor %}
         </ul>

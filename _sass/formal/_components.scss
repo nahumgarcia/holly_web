@@ -99,8 +99,13 @@
 
 .btn--outline {
   background: transparent;
-  border-color: $color-primary;
+  border: 2px solid $color-primary;
   color: $color-primary;
+  border-radius: 50px;
+  padding: $spacing-xs $spacing-lg;
+  font-size: $font-size-sm;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 
   &:hover {
     background: $color-primary;
@@ -551,13 +556,15 @@
 .testimonial {
   padding: $spacing-xl;
   padding-left: $spacing-2xl;
+  padding-top: $spacing-xl;
   background: rgba(255, 255, 255, 0.05);
   border-radius: $border-radius-lg;
   position: relative;
 
   @media (min-width: $breakpoint-md) {
     padding: $spacing-2xl;
-    padding-left: $spacing-3xl;
+    padding-left: $spacing-2xl;
+    padding-top: $spacing-2xl;
   }
 }
 
@@ -568,21 +575,27 @@
   line-height: $line-height-relaxed;
   font-size: $font-size-sm;
   position: relative;
+}
 
-  &::before {
-    content: '"';
-    font-family: $font-heading;
-    font-size: 5rem;
-    color: rgba(255, 255, 255, 0.15);
-    line-height: 1;
-    position: absolute;
-    top: -0.3em;
-    left: -0.5em;
+.testimonial-quote-icon {
+  position: absolute;
+  top: -1.25rem;
+  left: -1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  opacity: 0.2;
 
-    @media (min-width: $breakpoint-md) {
-      font-size: 6rem;
-      left: -0.6em;
-    }
+  @media (min-width: $breakpoint-md) {
+    width: 3rem;
+    height: 3rem;
+    top: -1.5rem;
+    left: -2rem;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
   }
 }
 

@@ -12,13 +12,8 @@ formal:
 fun:
   - title: Home
     url: /fun/
-  - title: About
-    url: /fun/about/
-  - title: Services
-    url: /fun/services/
-  - title: Testimonials
-    url: /fun/testimonials/
-  - title: Pricing
-    url: /fun/pricing/
+  - title: FAQs
+    url: /fun/faqs/
   - title: Contact
     url: /fun/contact/
+    button: true

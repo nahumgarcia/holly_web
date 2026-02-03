@@ -82,6 +82,20 @@
   }
 }
 
+.btn--outline {
+  background: transparent;
+  border-color: $color-neon-cyan;
+  color: $color-neon-cyan;
+  box-shadow: 0 0 10px $color-neon-cyan;
+  border-radius: 50px;
+
+  &:hover {
+    background: $color-neon-cyan;
+    color: $color-bg;
+    box-shadow: 0 0 30px $color-neon-cyan;
+  }
+}
+
 // Pain Points
 .pain-points {
   display: grid;
@@ -118,6 +132,264 @@
 .pain-point-text {
   font-size: $font-size-base;
   color: $color-text;
+}
+
+// Solution block
+.solution-block {
+  margin: $spacing-2xl 0;
+  padding: $spacing-xl;
+  border: 2px solid $color-neon-yellow;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 15px rgba($color-neon-yellow, 0.3);
+
+  p {
+    font-size: $font-size-lg;
+    line-height: 1.7;
+    margin-bottom: $spacing-lg;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  h3 {
+    margin-bottom: $spacing-md;
+  }
+}
+
+// Student Stories Section
+.stories-highlight {
+  background: linear-gradient(135deg, rgba($color-neon-purple, 0.3) 0%, rgba($color-neon-pink, 0.3) 100%);
+  border-top: 3px solid $color-neon-purple;
+  border-bottom: 3px solid $color-neon-pink;
+}
+
+.stories-section {
+  text-align: center;
+
+  h2 {
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.stories-intro {
+  font-size: $font-size-xl;
+  margin-bottom: $spacing-xl;
+  color: $color-text;
+}
+
+.stories-buttons {
+  display: flex;
+  gap: $spacing-lg;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.story-btn {
+  flex: 1;
+  min-width: 220px;
+  max-width: 300px;
+  padding: $spacing-lg $spacing-xl;
+  background: rgba(0, 0, 0, 0.7);
+  border: 3px solid $color-neon-green;
+  font-family: $font-heading;
+  font-size: $font-size-lg;
+  color: $color-neon-green;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 15px rgba($color-neon-green, 0.3);
+
+  &:hover {
+    background: $color-neon-green;
+    color: $color-bg;
+    box-shadow: 0 0 30px $color-neon-green;
+    transform: scale(1.05);
+  }
+}
+
+.story-btn-label {
+  font-weight: bold;
+}
+
+.story-btn-arrow {
+  font-size: $font-size-xl;
+  transition: transform 0.3s;
+
+  .story-btn:hover & {
+    transform: translateX(5px);
+  }
+}
+
+// Modal
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-lg;
+
+  &.active {
+    display: flex;
+  }
+}
+
+.modal {
+  background: $color-bg;
+  border: 3px solid $color-neon-cyan;
+  box-shadow: 0 0 30px $color-neon-cyan;
+  max-width: 700px;
+  width: 100%;
+  max-height: 85vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: modal-in 0.3s ease;
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-lg $spacing-xl;
+  border-bottom: 2px solid $color-neon-purple;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: $font-size-huge;
+  cursor: pointer;
+  color: $color-neon-pink;
+  padding: 0;
+  line-height: 1;
+  text-shadow: 0 0 10px $color-neon-pink;
+
+  &:hover {
+    color: $color-neon-cyan;
+    text-shadow: 0 0 15px $color-neon-cyan;
+  }
+}
+
+.modal-body {
+  padding: $spacing-xl;
+  overflow-y: auto;
+
+  h4 {
+    color: $color-neon-green;
+    text-shadow: 0 0 8px $color-neon-green;
+    margin-bottom: $spacing-sm;
+    margin-top: $spacing-xl;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  p {
+    line-height: 1.7;
+    margin-bottom: $spacing-md;
+  }
+}
+
+// Services Grid
+.services-grid {
+  display: grid;
+  gap: $spacing-xl;
+  max-width: 800px;
+  margin: 0 auto;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.services-card {
+  border: 3px solid $color-neon-green;
+  padding: $spacing-xl;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 15px rgba($color-neon-green, 0.3);
+
+  &--featured {
+    border-color: $color-neon-pink;
+    box-shadow: 0 0 25px rgba($color-neon-pink, 0.5);
+    position: relative;
+
+    &::before {
+      content: '⭐ MOST POPULAR ⭐';
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: $color-neon-pink;
+      color: $color-bg;
+      padding: $spacing-xs $spacing-md;
+      font-family: $font-heading;
+      font-size: $font-size-sm;
+      white-space: nowrap;
+    }
+  }
+}
+
+.services-title {
+  font-size: $font-size-2xl;
+  text-align: center;
+  margin-bottom: $spacing-xl;
+}
+
+.services-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  td {
+    padding: $spacing-sm;
+    border-bottom: 1px solid rgba($color-neon-cyan, 0.3);
+
+    &:first-child {
+      text-align: left;
+      color: $color-text;
+    }
+
+    &:last-child {
+      text-align: right;
+      font-weight: bold;
+      color: $color-neon-yellow;
+      text-shadow: 0 0 5px $color-neon-yellow;
+      font-family: $font-heading;
+    }
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+// Section alt background
+.section--alt {
+  background: rgba($color-neon-purple, 0.1);
 }
 
 // Callout
@@ -157,7 +429,7 @@
   }
 }
 
-// FAQ
+// FAQ Accordion
 .faq-list {
   max-width: 800px;
   margin: 0 auto;
@@ -165,22 +437,80 @@
 
 .faq-item {
   border: 2px solid $color-neon-cyan;
-  margin-bottom: $spacing-lg;
-  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
   background: rgba(0, 0, 0, 0.6);
   box-shadow: 0 0 10px rgba($color-neon-cyan, 0.3);
 }
 
 .faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-lg;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: $font-heading;
+  font-size: $font-size-lg;
   color: $color-neon-pink;
   text-shadow: 0 0 8px $color-neon-pink;
-  margin-bottom: $spacing-md;
-  font-size: $font-size-lg;
+  transition: all 0.3s;
+
+  &:hover {
+    color: $color-neon-cyan;
+    text-shadow: 0 0 12px $color-neon-cyan;
+  }
+
+  .faq-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    margin-left: $spacing-md;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background: $color-neon-green;
+      box-shadow: 0 0 5px $color-neon-green;
+      transition: transform 0.3s;
+    }
+
+    &::before {
+      width: 100%;
+      height: 3px;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      width: 3px;
+      height: 100%;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+    }
+  }
+
+  &[aria-expanded="true"] .faq-icon::after {
+    transform: translateX(-50%) rotate(90deg);
+    opacity: 0;
+  }
 }
 
 .faq-answer {
+  display: none;
+  padding: 0 $spacing-lg $spacing-lg;
   color: $color-text;
   line-height: 1.7;
+
+  &.active {
+    display: block;
+  }
 }
 
 // Pricing

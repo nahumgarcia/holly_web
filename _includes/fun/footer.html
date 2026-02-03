@@ -1,5 +1,24 @@
 <footer class="footer">
   <div class="container">
+    <!-- Testimonials -->
+    <div class="testimonials-footer">
+      <h3 class="sparkle">~* What My Students Say *~</h3>
+      <div class="testimonials-grid">
+        {% for testimonial in site.data.content.testimonials.items %}
+        <div class="testimonial">
+          <div class="testimonial-quote">
+            <span class="testimonial-quote-icon">💬</span>
+            {{ testimonial.quote }}
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-name rainbow">{{ testimonial.name }}</div>
+            <div class="testimonial-role">{{ testimonial.role }} at {{ testimonial.company }}</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
     <!-- CONSTRUCTION ZONE -->
     <div class="construction-zone">
       <span class="animated-emoji shake">🚧</span>
@@ -46,12 +65,6 @@
 
     <marquee behavior="alternate" scrollamount="3" class="footer-marquee">
       🐱💖🌟 Thanks for visiting!! 🌟💖🐱 Made with 💖 and lots of ☕ 🐱💖🌟 Best viewed in Netscape Navigator 4.0 at 800x600 resolution 🌟💖🐱 IE users click HERE for best experience 🐱💖🌟
-    </marquee>
-
-    <marquee behavior="scroll" direction="up" scrollamount="2" height="60" class="vertical-marquee">
-      <p>★ Holly Rocks ★</p>
-      <p>★ Learn English ★</p>
-      <p>★ Have Fun ★</p>
     </marquee>
 
     <div class="footer-links">
