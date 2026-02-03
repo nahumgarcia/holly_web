@@ -658,21 +658,98 @@
 }
 
 .contact-form-wrapper {
-  background: $color-bg-alt;
+  background: rgba(255, 255, 255, 0.03);
   border-radius: $border-radius-lg;
-  padding: $spacing-md;
-  overflow: hidden;
+  padding: $spacing-xl;
 
   @media (min-width: $breakpoint-md) {
-    padding: $spacing-lg;
+    padding: $spacing-2xl;
+  }
+}
+
+// Contact Form
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+
+  label {
+    font-weight: 500;
+    color: $color-text;
+    font-size: $font-size-sm;
   }
 
-  iframe {
-    width: 100%;
-    min-height: 900px;
-    border: none;
-    background: $color-bg;
+  input,
+  select,
+  textarea {
+    padding: $spacing-md;
+    background: #e8e8e8;
+    border: 2px solid #ccc;
     border-radius: $border-radius;
+    color: #222;
+    font-family: $font-body;
+    font-size: $font-size-base;
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+    &::placeholder {
+      color: #666;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-primary;
+      box-shadow: 0 0 0 3px rgba($color-primary, 0.2);
+    }
+  }
+
+  select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23ffffff' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right $spacing-md center;
+    padding-right: $spacing-2xl;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+}
+
+.btn--full {
+  width: 100%;
+}
+
+.form-message {
+  padding: $spacing-xl;
+  border-radius: $border-radius-lg;
+  text-align: center;
+
+  &--success {
+    background: rgba($color-primary, 0.1);
+    border: 1px solid $color-primary;
+
+    p {
+      color: $color-primary;
+      margin: 0;
+    }
+  }
+
+  &--error {
+    background: rgba(#ff4444, 0.1);
+    border: 1px solid #ff4444;
+
+    p {
+      color: #ff4444;
+      margin: 0;
+    }
   }
 }
 

@@ -700,14 +700,112 @@
 .contact-form-wrapper {
   border: 3px solid $color-neon-green;
   box-shadow: 0 0 20px $color-neon-green;
-  padding: $spacing-md;
-  background: rgba(255, 255, 255, 0.95);
+  padding: $spacing-xl;
+  background: rgba(0, 0, 0, 0.8);
 
-  iframe {
-    width: 100%;
-    min-height: 600px;
-    border: none;
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-2xl;
   }
+}
+
+// Contact Form
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+
+  label {
+    font-family: $font-heading;
+    font-weight: bold;
+    color: $color-neon-cyan;
+    text-shadow: 0 0 5px $color-neon-cyan;
+    font-size: $font-size-base;
+  }
+
+  input,
+  select,
+  textarea {
+    padding: $spacing-md;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid $color-neon-purple;
+    color: $color-text;
+    font-family: $font-body;
+    font-size: $font-size-base;
+    transition: all 0.3s;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-neon-pink;
+      box-shadow: 0 0 15px $color-neon-pink;
+    }
+  }
+
+  select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2300ffff' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right $spacing-md center;
+    padding-right: $spacing-2xl;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+}
+
+.btn--full {
+  width: 100%;
+}
+
+.form-message {
+  padding: $spacing-xl;
+  text-align: center;
+  border: 3px solid;
+
+  &--success {
+    border-color: $color-neon-green;
+    box-shadow: 0 0 20px $color-neon-green;
+    background: rgba(0, 0, 0, 0.8);
+
+    p {
+      color: $color-neon-green;
+      text-shadow: 0 0 10px $color-neon-green;
+      font-family: $font-heading;
+      margin: $spacing-sm 0;
+    }
+  }
+
+  &--error {
+    border-color: $color-neon-orange;
+    box-shadow: 0 0 20px $color-neon-orange;
+    background: rgba(0, 0, 0, 0.8);
+
+    p {
+      color: $color-neon-orange;
+      text-shadow: 0 0 10px $color-neon-orange;
+      font-family: $font-heading;
+      margin: $spacing-sm 0;
+    }
+  }
+}
+
+.neon-box {
+  border: 2px solid $color-neon-purple;
+  padding: $spacing-xl;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 15px rgba($color-neon-purple, 0.3);
 }
 
 // CTA

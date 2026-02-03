@@ -194,4 +194,5 @@ contact:
   title: "Get in Touch"
   intro: "Interested in improving your English? I'd love to hear from you!"
   linkedin: "https://www.linkedin.com/in/holly-richmond/"
-  form_url: "https://docs.google.com/forms/d/e/1FAIpQLScBNAAxEX5PgtMPvNdirFNmH7P3UJQtoKWr2np6XM6tscVaaA/viewform"
+  # Get your free access key at https://web3forms.com/ (just enter your email)
+  web3forms_key: "7c767044-7ea0-4ab9-b411-8ac436b4df7a"
