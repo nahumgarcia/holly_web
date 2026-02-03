@@ -402,6 +402,8 @@
   border: 2px solid $color-border;
   border-radius: $border-radius-lg;
   padding: $spacing-2xl;
+  display: flex;
+  flex-direction: column;
 
   &--featured {
     border-color: $color-primary;
@@ -460,7 +462,8 @@
 }
 
 .services-cta {
-  margin-top: $spacing-xl;
+  margin-top: auto;
+  padding-top: $spacing-xl;
   text-align: center;
 }
 
