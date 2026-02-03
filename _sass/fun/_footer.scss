@@ -40,13 +40,7 @@
   color: $color-text;
   margin-bottom: $spacing-lg;
   line-height: 1.7;
-  position: relative;
-}
-
-.testimonial-quote-icon {
-  font-size: 2rem;
-  margin-right: $spacing-sm;
-  filter: drop-shadow(0 0 5px $color-neon-cyan);
+  text-align: left;
 }
 
 .testimonial-author {

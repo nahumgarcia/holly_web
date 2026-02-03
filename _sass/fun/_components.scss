@@ -602,19 +602,7 @@
   margin-bottom: $spacing-lg;
   line-height: 1.7;
   position: relative;
-  padding-left: $spacing-xl;
-
-  &::before {
-    content: '"';
-    position: absolute;
-    left: 0;
-    top: -10px;
-    font-family: $font-heading;
-    font-size: $font-size-huge;
-    color: $color-neon-cyan;
-    text-shadow: 0 0 10px $color-neon-cyan;
-    line-height: 1;
-  }
+  text-align: left;
 }
 
 .testimonial-author {
