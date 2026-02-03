@@ -111,6 +111,16 @@
     background: $color-primary;
     color: $color-text-inverse;
   }
+
+  &.btn--light {
+    border-color: $color-text-inverse;
+    color: $color-text-inverse;
+
+    &:hover {
+      background: $color-text-inverse;
+      color: $color-primary;
+    }
+  }
 }
 
 .btn--large {
@@ -449,6 +459,11 @@
   color: $color-text-light;
 }
 
+.services-cta {
+  margin-top: $spacing-xl;
+  text-align: center;
+}
+
 // FAQs / Accordion
 .faq-list {
   max-width: $container-narrow;
@@ -537,6 +552,38 @@
       margin-bottom: 0;
     }
   }
+}
+
+// Testimonials collapsible
+.testimonials-collapsible {
+  max-height: 400px;
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.5s ease;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(transparent, $color-bg-dark);
+    pointer-events: none;
+  }
+
+  &.expanded {
+    max-height: 2000px;
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.testimonials-toggle {
+  margin-top: $spacing-xl;
+  text-align: center;
 }
 
 // Testimonials (for footer)

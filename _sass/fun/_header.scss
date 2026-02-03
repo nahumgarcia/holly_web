@@ -31,15 +31,11 @@
 
 .header-content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   padding: $spacing-lg 0;
   gap: $spacing-md;
-
-  @media (min-width: $breakpoint-md) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
 }
 
 .logo {
@@ -56,7 +52,7 @@
 .logo-text {
   display: block;
   font-family: $font-heading;
-  font-size: $font-size-2xl;
+  font-size: $font-size-xl;
   color: $color-neon-pink;
   text-shadow:
     0 0 10px $color-neon-pink,
@@ -69,106 +65,11 @@
   }
 }
 
-.logo-subtitle {
-  display: block;
-  font-size: $font-size-sm;
-  color: $color-neon-yellow;
-  text-shadow: 0 0 10px $color-neon-yellow;
-  margin-top: $spacing-xs;
-}
-
-.nav-toggle {
-  display: block;
-  background: linear-gradient(45deg, $color-neon-green, $color-neon-cyan);
-  color: $color-bg;
-  border: 3px solid $color-neon-yellow;
-  padding: $spacing-sm $spacing-lg;
-  font-family: $font-heading;
-  font-size: $font-size-lg;
-  cursor: pointer;
-  box-shadow:
-    0 0 10px $color-neon-green,
-    0 0 20px $color-neon-cyan;
-  animation: pulse-glow 1s ease-in-out infinite;
-
-  @media (min-width: $breakpoint-md) {
-    display: none;
-  }
-
-  &:hover {
-    animation: shake 0.2s ease-in-out infinite;
-    background: linear-gradient(45deg, $color-neon-pink, $color-neon-purple);
-  }
-}
-
-.nav {
-  display: none;
-  width: 100%;
-
-  @media (min-width: $breakpoint-md) {
-    display: block;
-    width: auto;
-  }
-
-  &--open {
-    display: block;
-  }
-}
-
-.nav-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: $spacing-sm;
-
-  @media (min-width: $breakpoint-md) {
-    flex-direction: row;
-    gap: $spacing-md;
-  }
-}
-
-.nav-item {
-  margin: 0;
-}
-
-.nav-link {
-  display: block;
-  padding: $spacing-xs $spacing-sm;
-  font-family: $font-heading;
-  font-size: $font-size-base;
-  color: $color-neon-cyan;
-  text-decoration: none;
-  border: 2px solid transparent;
-  transition: all 0.1s;
-  text-shadow: 0 0 5px $color-neon-cyan;
-
-  &:hover {
-    color: $color-neon-pink;
-    border-color: $color-neon-pink;
-    box-shadow:
-      0 0 10px $color-neon-pink,
-      0 0 20px $color-neon-pink,
-      inset 0 0 10px rgba($color-neon-pink, 0.3);
-    text-shadow: 0 0 10px $color-neon-pink;
-    animation: shake 0.15s ease-in-out infinite;
-  }
-
-  &.active {
-    color: $color-neon-yellow;
-    border-color: $color-neon-yellow;
-    box-shadow: 0 0 15px $color-neon-yellow;
-    background: rgba($color-neon-yellow, 0.1);
-  }
-}
-
 .nav-btn {
   display: inline-block;
-  padding: $spacing-xs $spacing-lg;
+  padding: $spacing-xs $spacing-md;
   font-family: $font-heading;
-  font-size: $font-size-base;
+  font-size: $font-size-sm;
   color: $color-bg;
   text-decoration: none;
   background: $color-neon-green;
@@ -176,6 +77,12 @@
   border-radius: 50px;
   box-shadow: 0 0 15px $color-neon-green;
   transition: all 0.3s;
+  white-space: nowrap;
+
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-xs $spacing-lg;
+    font-size: $font-size-base;
+  }
 
   &:hover {
     background: $color-neon-pink;

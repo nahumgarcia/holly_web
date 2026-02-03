@@ -1,19 +1,5 @@
-# Navigation for formal version
-formal:
-  - title: Home
-    url: /
-  - title: FAQs
-    url: /faqs/
-  - title: Contact
-    url: /contact/
-    button: true
+# Navigation for formal version (single-page, navigation handled in header)
+formal: []
 
-# Navigation for fun version
-fun:
-  - title: Home
-    url: /fun/
-  - title: FAQs
-    url: /fun/faqs/
-  - title: Contact
-    url: /fun/contact/
-    button: true
+# Navigation for fun version (single-page, navigation handled in header)
+fun: []

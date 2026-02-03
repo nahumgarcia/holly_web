@@ -1,28 +1,5 @@
 <footer class="footer">
   <div class="container">
-    <!-- Testimonials -->
-    <div class="testimonials-footer">
-      <h3>What My Students Say</h3>
-      <div class="testimonials-grid">
-        {% for testimonial in site.data.content.testimonials.items %}
-        <div class="testimonial">
-          <div class="testimonial-quote">
-            <span class="testimonial-quote-icon">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11.3 5.2C7.8 7 5.6 10.1 5.6 13.6c0 2.8 1.8 4.8 4.1 4.8 2.1 0 3.8-1.7 3.8-3.9 0-2.1-1.5-3.7-3.4-3.9.3-1.9 1.8-3.7 4.2-4.9L11.3 5.2zM21 5.2c-3.5 1.8-5.7 4.9-5.7 8.4 0 2.8 1.8 4.8 4.1 4.8 2.1 0 3.8-1.7 3.8-3.9 0-2.1-1.5-3.7-3.4-3.9.3-1.9 1.8-3.7 4.2-4.9L21 5.2z"/>
-              </svg>
-            </span>
-            {{ testimonial.quote }}
-          </div>
-          <div class="testimonial-author">
-            <div class="testimonial-name">{{ testimonial.name }}</div>
-            <div class="testimonial-role">{{ testimonial.role }} at {{ testimonial.company }}</div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-
     <div class="footer-content">
       <div class="footer-brand">
         <span class="footer-logo">Holly Richmond</span>
