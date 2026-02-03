@@ -1,0 +1,125 @@
+---
+layout: formal
+title: FAQs
+description: Frequently asked questions about Holly Richmond's English classes for engineers and tech professionals.
+---
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h1>Frequently Asked Questions</h1>
+      <p>Everything you need to know about my classes.</p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>{{ site.data.content.services.focus.question }}</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          {{ site.data.content.services.focus.answer | markdownify }}
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>{{ site.data.content.services.structure.question }}</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          {{ site.data.content.services.structure.answer | markdownify }}
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>{{ site.data.content.services.different.question }}</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          {{ site.data.content.services.different.answer | markdownify }}
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>{{ site.data.content.services.materials.question }}</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          {{ site.data.content.services.materials.answer | markdownify }}
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>{{ site.data.content.services.levels.question }}</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          {{ site.data.content.services.levels.answer | markdownify }}
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>{{ site.data.content.services.homework.question }}</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          {{ site.data.content.services.homework.answer | markdownify }}
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>{{ site.data.content.services.duration.question }}</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          {{ site.data.content.services.duration.answer | markdownify }}
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>{{ site.data.content.services.missed.question }}</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          {{ site.data.content.services.missed.answer | markdownify }}
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>{{ site.data.content.services.enroll.question }}</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          {{ site.data.content.services.enroll.answer | markdownify }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function toggleFaq(button) {
+    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+    const answer = button.nextElementSibling;
+
+    // Close all other FAQs
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.setAttribute('aria-expanded', 'false');
+      btn.nextElementSibling.classList.remove('active');
+    });
+
+    // Toggle current FAQ
+    if (!isExpanded) {
+      button.setAttribute('aria-expanded', 'true');
+      answer.classList.add('active');
+    }
+  }
+</script>

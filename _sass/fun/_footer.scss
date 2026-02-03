@@ -1,13 +1,14 @@
 .footer {
   position: relative;
   z-index: 1;
-  background: linear-gradient(0deg, rgba(0,0,0,0.95) 0%, transparent 100%);
+  background: linear-gradient(0deg, rgba(0,0,0,0.98) 0%, transparent 100%);
   padding: $spacing-3xl 0 $spacing-xl;
   margin-top: $spacing-3xl;
   text-align: center;
 }
 
-.footer-gifs {
+// Construction Zone
+.construction-zone {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,70 +16,176 @@
   margin-bottom: $spacing-xl;
   flex-wrap: wrap;
 
-  img {
-    max-height: 60px;
+  .construction-gif {
+    max-height: 50px;
     image-rendering: pixelated;
   }
+
+  .animated-emoji {
+    font-size: 3rem;
+  }
+
+  .fire-text {
+    font-family: $font-heading;
+    font-size: $font-size-xl;
+  }
+}
+
+// Cat Army
+.cat-army {
+  display: flex;
+  justify-content: center;
+  gap: $spacing-xs;
+  margin-bottom: $spacing-xl;
+  flex-wrap: wrap;
+
+  span {
+    font-size: 2rem;
+    animation: bounce 0.5s ease-in-out infinite alternate;
+    filter: drop-shadow(0 0 5px $color-neon-pink);
+
+    @for $i from 1 through 7 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.1}s;
+      }
+    }
+  }
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
 }
 
 .guestbook {
   margin-bottom: $spacing-xl;
+  padding: $spacing-lg;
+  border: 3px dashed $color-neon-yellow;
+  background: rgba(0, 0, 0, 0.5);
 
   p {
     font-family: $font-heading;
-    font-size: $font-size-lg;
-    color: $color-neon-yellow;
-    text-shadow: 0 0 5px $color-neon-yellow;
-    margin-bottom: $spacing-sm;
+    font-size: $font-size-xl;
+    margin-bottom: $spacing-md;
   }
 }
 
 .guestbook-link {
   display: inline-block;
-  background: $color-neon-purple;
+  background: linear-gradient(45deg, $color-neon-purple, $color-neon-pink);
   color: $color-text;
-  padding: $spacing-sm $spacing-lg;
+  padding: $spacing-md $spacing-xl;
   text-decoration: none;
   font-family: $font-heading;
-  box-shadow: 0 0 15px $color-neon-purple;
-  transition: all 0.3s;
+  font-size: $font-size-lg;
+  box-shadow:
+    0 0 15px $color-neon-purple,
+    0 0 30px $color-neon-pink;
+  border: 3px solid $color-neon-yellow;
 
   &:hover {
-    background: $color-neon-pink;
-    box-shadow: 0 0 25px $color-neon-pink;
-    color: $color-text;
-    transform: scale(1.05);
+    background: linear-gradient(45deg, $color-neon-cyan, $color-neon-green);
+    box-shadow:
+      0 0 30px $color-neon-cyan,
+      0 0 60px $color-neon-green;
+    color: $color-bg;
+    animation: shake 0.1s ease-in-out infinite;
   }
 }
 
 .visitor-counter {
   margin-bottom: $spacing-xl;
+  padding: $spacing-lg;
 
   p {
-    font-size: $font-size-sm;
-    color: $color-text-dim;
+    font-family: $font-heading;
+    font-size: $font-size-base;
     margin-bottom: $spacing-xs;
   }
 }
 
 .counter-display {
   display: inline-block;
-  background: #111;
-  border: 3px inset #444;
+  background: #000;
+  border: 4px inset #666;
+  padding: $spacing-sm $spacing-lg;
+  font-family: $font-mono;
+  font-size: $font-size-2xl;
+  color: $color-neon-green;
+  text-shadow:
+    0 0 10px $color-neon-green,
+    0 0 20px $color-neon-green,
+    0 0 40px $color-neon-green;
+  letter-spacing: 0.3em;
+  animation: counter-glow 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes counter-glow {
+  from {
+    text-shadow: 0 0 10px $color-neon-green, 0 0 20px $color-neon-green;
+  }
+  to {
+    text-shadow: 0 0 20px $color-neon-cyan, 0 0 40px $color-neon-cyan, 0 0 60px $color-neon-cyan;
+    color: $color-neon-cyan;
+  }
+}
+
+// Webrings
+.webrings {
+  margin-bottom: $spacing-xl;
+
+  p {
+    font-family: $font-heading;
+    color: $color-neon-purple;
+    text-shadow: 0 0 10px $color-neon-purple;
+    margin-bottom: $spacing-md;
+  }
+}
+
+.webring-badges {
+  display: flex;
+  justify-content: center;
+  gap: $spacing-md;
+  flex-wrap: wrap;
+}
+
+.webring-badge {
+  display: inline-block;
+  background: linear-gradient(180deg, #444, #222);
+  border: 2px outset #888;
   padding: $spacing-xs $spacing-md;
   font-family: $font-mono;
-  font-size: $font-size-xl;
-  color: $color-neon-green;
-  text-shadow: 0 0 10px $color-neon-green;
-  letter-spacing: 0.2em;
+  font-size: $font-size-sm;
+  color: $color-neon-yellow;
+  text-shadow: 1px 1px 0 #000;
+
+  &:hover {
+    background: linear-gradient(180deg, #666, #333);
+  }
 }
 
 .footer-marquee {
-  background: linear-gradient(90deg, $color-neon-cyan, $color-neon-green, $color-neon-yellow);
+  background: linear-gradient(90deg, $color-neon-cyan, $color-neon-green, $color-neon-yellow, $color-neon-pink);
+  background-size: 200% auto;
+  animation: rainbow-bg 5s linear infinite;
   color: $color-bg;
-  padding: $spacing-xs;
-  font-size: $font-size-sm;
+  padding: $spacing-sm;
+  font-size: $font-size-base;
   margin: $spacing-xl 0;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+}
+
+.vertical-marquee {
+  background: rgba($color-neon-purple, 0.2);
+  border: 2px solid $color-neon-purple;
+  margin: $spacing-lg auto;
+  max-width: 200px;
+
+  p {
+    color: $color-neon-yellow;
+    font-family: $font-heading;
+    margin: $spacing-xs 0;
+  }
 }
 
 .footer-links {
@@ -88,13 +195,39 @@
 .switch-link {
   color: $color-text-dim;
   font-size: $font-size-sm;
+  font-family: $font-mono;
 
   &:hover {
     color: $color-text;
+    text-shadow: none;
+    animation: none;
   }
 }
 
 .copyright {
   font-size: $font-size-sm;
-  color: $color-text-dim;
+  color: $color-neon-pink;
+  font-family: $font-heading;
+  text-shadow: 0 0 10px $color-neon-pink;
+  margin-bottom: $spacing-lg;
+}
+
+// Badges
+.badges {
+  display: flex;
+  justify-content: center;
+  gap: $spacing-sm;
+  flex-wrap: wrap;
+  margin-top: $spacing-lg;
+}
+
+.badge {
+  display: inline-block;
+  background: linear-gradient(180deg, #555, #222);
+  border: 2px outset #777;
+  padding: $spacing-xs $spacing-sm;
+  font-family: $font-mono;
+  font-size: 10px;
+  color: #ccc;
+  text-transform: uppercase;
 }

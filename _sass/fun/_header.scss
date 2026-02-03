@@ -1,16 +1,32 @@
 .header {
   position: relative;
   z-index: 100;
-  background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, transparent 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0.95) 0%, transparent 100%);
   padding-bottom: $spacing-md;
 }
 
 .welcome-marquee {
-  background: linear-gradient(90deg, $color-neon-purple, $color-neon-pink, $color-neon-cyan);
+  background: linear-gradient(90deg, #ff0000, #ff7700, #ffff00, #00ff00, #0000ff, #8b00ff, #ff0000);
+  background-size: 200% auto;
+  animation: rainbow-bg 3s linear infinite;
   color: $color-text;
   padding: $spacing-xs;
-  font-size: $font-size-sm;
+  font-size: $font-size-base;
   font-weight: bold;
+  text-shadow: 2px 2px 0 #000;
+}
+
+@keyframes rainbow-bg {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+.secondary-marquee {
+  background: $color-neon-purple;
+  color: $color-neon-yellow;
+  padding: $spacing-xs;
+  font-size: $font-size-sm;
+  text-shadow: 1px 1px 0 #000;
 }
 
 .header-content {
@@ -32,7 +48,7 @@
 
   &:hover {
     .logo-text {
-      text-shadow: 0 0 20px $color-neon-pink, 0 0 40px $color-neon-pink;
+      animation: shake 0.1s ease-in-out infinite;
     }
   }
 }
@@ -42,8 +58,11 @@
   font-family: $font-heading;
   font-size: $font-size-2xl;
   color: $color-neon-pink;
-  text-shadow: 0 0 10px $color-neon-pink;
-  transition: text-shadow 0.3s;
+  text-shadow:
+    0 0 10px $color-neon-pink,
+    0 0 20px $color-neon-pink,
+    0 0 40px $color-neon-pink,
+    3px 3px 0 $color-neon-cyan;
 
   @media (min-width: $breakpoint-md) {
     font-size: $font-size-3xl;
@@ -54,27 +73,31 @@
   display: block;
   font-size: $font-size-sm;
   color: $color-neon-yellow;
-  text-shadow: 0 0 5px $color-neon-yellow;
+  text-shadow: 0 0 10px $color-neon-yellow;
+  margin-top: $spacing-xs;
 }
 
 .nav-toggle {
   display: block;
-  background: $color-neon-green;
+  background: linear-gradient(45deg, $color-neon-green, $color-neon-cyan);
   color: $color-bg;
-  border: 2px solid $color-neon-green;
-  padding: $spacing-xs $spacing-md;
+  border: 3px solid $color-neon-yellow;
+  padding: $spacing-sm $spacing-lg;
   font-family: $font-heading;
-  font-size: $font-size-base;
+  font-size: $font-size-lg;
   cursor: pointer;
-  box-shadow: 0 0 10px $color-neon-green;
+  box-shadow:
+    0 0 10px $color-neon-green,
+    0 0 20px $color-neon-cyan;
+  animation: pulse-glow 1s ease-in-out infinite;
 
   @media (min-width: $breakpoint-md) {
     display: none;
   }
 
   &:hover {
-    background: $color-bg;
-    color: $color-neon-green;
+    animation: shake 0.2s ease-in-out infinite;
+    background: linear-gradient(45deg, $color-neon-pink, $color-neon-purple);
   }
 }
 
@@ -119,13 +142,54 @@
   color: $color-neon-cyan;
   text-decoration: none;
   border: 2px solid transparent;
-  transition: all 0.2s;
+  transition: all 0.1s;
+  text-shadow: 0 0 5px $color-neon-cyan;
 
-  &:hover,
-  &.active {
+  &:hover {
     color: $color-neon-pink;
     border-color: $color-neon-pink;
-    box-shadow: 0 0 10px $color-neon-pink;
-    text-shadow: 0 0 5px $color-neon-pink;
+    box-shadow:
+      0 0 10px $color-neon-pink,
+      0 0 20px $color-neon-pink,
+      inset 0 0 10px rgba($color-neon-pink, 0.3);
+    text-shadow: 0 0 10px $color-neon-pink;
+    animation: shake 0.15s ease-in-out infinite;
   }
+
+  &.active {
+    color: $color-neon-yellow;
+    border-color: $color-neon-yellow;
+    box-shadow: 0 0 15px $color-neon-yellow;
+    background: rgba($color-neon-yellow, 0.1);
+  }
+}
+
+// GIF Parade / Emoji Parade
+.gif-parade {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-md;
+  padding: $spacing-md 0;
+  flex-wrap: wrap;
+
+  .parade-gif {
+    max-height: 40px;
+    image-rendering: pixelated;
+  }
+}
+
+.animated-emoji {
+  font-size: 2.5rem;
+  display: inline-block;
+  filter: drop-shadow(0 0 10px currentColor);
+}
+
+.bounce-emoji {
+  animation: bounce-emoji 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes bounce-emoji {
+  from { transform: translateY(0) scale(1); }
+  to { transform: translateY(-15px) scale(1.2); }
 }

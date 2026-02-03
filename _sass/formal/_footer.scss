@@ -2,14 +2,14 @@
   background: $color-bg-dark;
   color: $color-text-inverse;
   padding: $spacing-3xl 0 $spacing-xl;
-  margin-top: $spacing-4xl;
+  margin-top: 0;
 }
 
 .footer-content {
   display: flex;
   flex-direction: column;
   gap: $spacing-xl;
-  margin-bottom: $spacing-2xl;
+  padding-bottom: $spacing-xl;
 
   @media (min-width: $breakpoint-md) {
     flex-direction: row;
@@ -57,9 +57,21 @@
   }
 }
 
+// Testimonials in footer (now at top)
+.testimonials-footer {
+  padding-bottom: $spacing-2xl;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: $spacing-2xl;
+
+  h3 {
+    color: $color-text-inverse;
+    font-size: $font-size-xl;
+    margin-bottom: $spacing-xl;
+  }
+}
+
 .footer-bottom {
   padding-top: $spacing-xl;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
   gap: $spacing-sm;

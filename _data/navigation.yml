@@ -2,16 +2,11 @@
 formal:
   - title: Home
     url: /
-  - title: About
-    url: /about/
-  - title: Services
-    url: /services/
-  - title: Testimonials
-    url: /testimonials/
-  - title: Pricing
-    url: /pricing/
+  - title: FAQs
+    url: /faqs/
   - title: Contact
     url: /contact/
+    button: true
 
 # Navigation for fun version
 fun:

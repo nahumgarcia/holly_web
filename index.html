@@ -4,17 +4,22 @@ title: Home
 description: English classes for engineers and tech professionals. Improve your workplace communication with US-licensed ESL teacher Holly Richmond.
 ---
 
+<!-- Hero -->
 <section class="hero">
   <div class="container">
-    <h1 class="hero-title">{{ site.data.content.hero.greeting }}</h1>
-    <p class="hero-subtitle">{{ site.data.content.hero.tagline }}</p>
-    <div class="hero-description">
-      {{ site.data.content.hero.description | markdownify }}
+    <div class="hero-content">
+      <h1 class="hero-title">{{ site.data.content.hero.greeting }}</h1>
+      <p class="hero-subtitle">{{ site.data.content.hero.tagline }}</p>
+      <div class="hero-description">
+        {{ site.data.content.hero.description | markdownify }}
+        {{ site.data.content.about.approach | markdownify }}
+      </div>
+      <a href="#services" class="btn btn--outline">My services</a>
     </div>
-    <a href="{{ '/contact/' | relative_url }}" class="btn btn--primary btn--large">Get in Touch</a>
   </div>
 </section>
 
+<!-- Pain Points -->
 <section class="section section--alt">
   <div class="container">
     <div class="section-header">
@@ -22,36 +27,154 @@ description: English classes for engineers and tech professionals. Improve your 
     </div>
 
     <div class="pain-points">
-      {% for item in site.data.content.pain_points.items %}
       <div class="pain-point">
         <div class="pain-point-icon">
-          <img src="{{ '/assets/images/icons/' | relative_url }}{{ item.icon }}" alt="">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
         </div>
-        <p class="pain-point-text">{{ item.text }}</p>
+        <p class="pain-point-text">Often people don't understand you the first time when you say something.</p>
       </div>
-      {% endfor %}
+
+      <div class="pain-point">
+        <div class="pain-point-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <p class="pain-point-text">You feel self-conscious when participating in meetings, forming a phrase you've never said before, or explaining complex processes.</p>
+      </div>
+
+      <div class="pain-point">
+        <div class="pain-point-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+        </div>
+        <p class="pain-point-text">You get stuck when trying to answer tricky questions from colleagues or clients.</p>
+      </div>
+
+      <div class="pain-point">
+        <div class="pain-point-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <p class="pain-point-text">You don't always feel confident writing professional sounding emails.</p>
+      </div>
     </div>
 
-    <div class="callout" style="margin-top: 3rem;">
-      <p><strong>{{ site.data.content.pain_points.problem }}</strong></p>
-    </div>
-
-    <div class="callout callout--success">
-      <p>{{ site.data.content.pain_points.solution }}</p>
-    </div>
-
-    <div class="callout callout--highlight">
+    <div class="solution-block">
+      <p>{{ site.data.content.pain_points.problem }}</p>
+      <h3>{{ site.data.content.pain_points.solution }}</h3>
       <p>{{ site.data.content.pain_points.outcome }}</p>
     </div>
   </div>
 </section>
 
-<section class="section">
+<!-- Student Stories -->
+<section class="section stories-highlight">
   <div class="container">
-    <div class="cta">
-      <h2>Ready to improve your English?</h2>
-      <p>Let's work together to help you communicate more confidently in the workplace.</p>
-      <a href="{{ '/contact/' | relative_url }}" class="btn btn--large">Contact Me</a>
+    <div class="stories-section">
+      <div class="stories-ornament">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+          <circle cx="50" cy="50" r="30" stroke="currentColor" stroke-width="1" opacity="0.2"/>
+          <circle cx="50" cy="50" r="15" stroke="currentColor" stroke-width="1" opacity="0.1"/>
+        </svg>
+      </div>
+      <h2>Student Stories</h2>
+      <p class="stories-intro">Do you want to know how my classes are? Check these student stories.</p>
+      <div class="stories-buttons">
+        <button class="story-btn" onclick="openModal('story1')">
+          <span class="story-btn-label">Student Story #1</span>
+          <span class="story-btn-arrow">→</span>
+        </button>
+        <button class="story-btn" onclick="openModal('story2')">
+          <span class="story-btn-label">Student Story #2</span>
+          <span class="story-btn-arrow">→</span>
+        </button>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- Services/Pricing -->
+<section class="section section--alt" id="services">
+  <div class="container">
+    <div class="section-header">
+      <h2>Services</h2>
+      <p>{{ site.data.content.pricing.note }}</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="services-card services-card--featured">
+        <h3 class="services-title">{{ site.data.content.pricing.individual.title }}</h3>
+        <table class="services-table">
+          {% for plan in site.data.content.pricing.individual.plans %}
+          <tr>
+            <td>{{ plan.name }}</td>
+            <td>&euro;{{ plan.price }}/{{ plan.unit }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+
+      <div class="services-card">
+        <h3 class="services-title">{{ site.data.content.pricing.group.title }}</h3>
+        <table class="services-table">
+          {% for plan in site.data.content.pricing.group.plans %}
+          <tr>
+            <td>{{ plan.name }}</td>
+            <td>&euro;{{ plan.price }}/{{ plan.unit }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modals for Student Stories -->
+{% for story in site.data.content.stories.items %}
+<div class="modal-overlay" id="story{{ forloop.index }}" onclick="closeModalOnOverlay(event, 'story{{ forloop.index }}')">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>{{ story.title }}</h3>
+      <button class="modal-close" onclick="closeModal('story{{ forloop.index }}')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <h4>{{ story.goal.title }}</h4>
+      {{ story.goal.text | markdownify }}
+
+      <h4>{{ story.method.title }}</h4>
+      {{ story.method.text | markdownify }}
+
+      <h4>{{ story.correction.title }}</h4>
+      {{ story.correction.text | markdownify }}
+
+      <h4>{{ story.results.title }}</h4>
+      {{ story.results.text | markdownify }}
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function closeModalOnOverlay(event, id) {
+    if (event.target.classList.contains('modal-overlay')) {
+      closeModal(id);
+    }
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.active').forEach(function(modal) {
+        modal.classList.remove('active');
+      });
+      document.body.style.overflow = '';
+    }
+  });
+</script>

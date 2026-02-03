@@ -1,17 +1,22 @@
 <header class="header">
   <div class="container">
-    <marquee behavior="scroll" direction="left" class="welcome-marquee">
-      ⭐ Welcome to Holly's AWESOME English Class Zone! ⭐ 🐱 Learn English the FUN way! 🐱 ✨ You've found the coolest corner of the internet! ✨
+    <!-- TOP MARQUEE MADNESS -->
+    <marquee behavior="scroll" direction="left" scrollamount="8" class="welcome-marquee">
+      <span class="blink">NEW!!</span> ⭐ Welcome to Holly's AWESOME English Zone! ⭐ 🐱 WOW! 🐱 <span class="blink">HOT!!</span> ✨ You've found THE COOLEST corner of the internet! ✨ 🔥🔥🔥 LEARN ENGLISH NOW!! 🔥🔥🔥
+    </marquee>
+
+    <marquee behavior="scroll" direction="right" scrollamount="5" class="secondary-marquee">
+      🌟 ★ ☆ 🌟 ★ ☆ 🌟 ★ ☆ 🌟 BEST VIEWED WITH NETSCAPE NAVIGATOR 🌟 ★ ☆ 🌟 ★ ☆ 🌟 ★ ☆ 🌟
     </marquee>
 
     <div class="header-content">
       <a href="{{ '/fun/' | relative_url }}" class="logo">
-        <span class="logo-text">~*Holly Richmond*~</span>
-        <span class="logo-subtitle">English Teacher Extraordinaire!</span>
+        <span class="logo-text glitch" data-text="~*Holly Richmond*~">~*Holly Richmond*~</span>
+        <span class="logo-subtitle blink">English Teacher Extraordinaire!</span>
       </a>
 
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span>MENU</span>
+        <span class="rainbow">MENU</span>
       </button>
 
       <nav class="nav" role="navigation">
@@ -19,12 +24,23 @@
           {% for item in site.data.navigation.fun %}
           <li class="nav-item">
             <a href="{{ item.url | relative_url }}" class="nav-link {% if page.url == item.url %}active{% endif %}">
-              {{ item.title }}
+              ★ {{ item.title }} ★
             </a>
           </li>
           {% endfor %}
         </ul>
       </nav>
+    </div>
+
+    <!-- GIF PARADE - Using reliable sources -->
+    <div class="gif-parade">
+      <span class="animated-emoji spin">🐱</span>
+      <span class="animated-emoji pulse">🔥</span>
+      <span class="animated-emoji bounce-emoji">⭐</span>
+      <span class="animated-emoji spin">🐱</span>
+      <span class="animated-emoji pulse">🔥</span>
+      <span class="animated-emoji bounce-emoji">⭐</span>
+      <span class="animated-emoji spin">🐱</span>
     </div>
   </div>
 </header>

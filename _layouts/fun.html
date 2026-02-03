@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }} - FUN ZONE</title>
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }} - FUN ZONE!!!</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
 
   <!-- Styles -->
@@ -23,19 +23,63 @@
 
   {% include fun/footer.html %}
 
+  <!-- EXTREME CHAOS: More floating elements! -->
   <script>
-    // Create floating elements
+    // Create LOTS of floating elements
+    const emojis = ['⭐', '✨', '🌟', '💫', '🐱', '🌈', '💖', '🎉', '🔥', '💀', '👻', '🦄', '🍕', '☕', '💾', '📀', '🎮', '🎸'];
+
     function createFloatingElement() {
-      const emojis = ['⭐', '✨', '🌟', '💫', '🐱', '🌈', '💖', '🎉'];
       const el = document.createElement('div');
       el.className = 'floating-emoji';
       el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
       el.style.left = Math.random() * 100 + 'vw';
-      el.style.animationDuration = (Math.random() * 3 + 4) + 's';
+      el.style.animationDuration = (Math.random() * 2 + 2) + 's';
+      el.style.fontSize = (Math.random() * 20 + 20) + 'px';
       document.body.appendChild(el);
-      setTimeout(() => el.remove(), 7000);
+      setTimeout(() => el.remove(), 5000);
     }
-    setInterval(createFloatingElement, 2000);
+
+    // Create elements more frequently!
+    setInterval(createFloatingElement, 500);
+
+    // Cursor trail effect
+    let lastX = 0, lastY = 0;
+    document.addEventListener('mousemove', (e) => {
+      if (Math.abs(e.clientX - lastX) > 30 || Math.abs(e.clientY - lastY) > 30) {
+        const trail = document.createElement('div');
+        trail.textContent = '✨';
+        trail.style.cssText = `
+          position: fixed;
+          left: ${e.clientX}px;
+          top: ${e.clientY}px;
+          pointer-events: none;
+          font-size: 20px;
+          z-index: 9999;
+          animation: trail-fade 0.5s forwards;
+        `;
+        document.body.appendChild(trail);
+        setTimeout(() => trail.remove(), 500);
+        lastX = e.clientX;
+        lastY = e.clientY;
+      }
+    });
+
+    // Add trail fade animation dynamically
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes trail-fade {
+        0% { opacity: 1; transform: scale(1) rotate(0deg); }
+        100% { opacity: 0; transform: scale(0) rotate(180deg); }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Random color changes on scroll
+    let hue = 0;
+    window.addEventListener('scroll', () => {
+      hue = (hue + 1) % 360;
+      document.body.style.setProperty('--scroll-hue', hue);
+    });
   </script>
 </body>
 </html>
