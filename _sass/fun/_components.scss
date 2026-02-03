@@ -675,7 +675,7 @@
 }
 
 .contact-link {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: $spacing-sm;
   margin-bottom: $spacing-md;
@@ -686,6 +686,15 @@
   &:hover {
     color: $color-neon-pink;
   }
+
+  &--header {
+    margin-top: $spacing-lg;
+    margin-bottom: 0;
+  }
+}
+
+.contact-form-container {
+  max-width: 600px;
 }
 
 .contact-form-wrapper {
@@ -835,7 +844,7 @@
 
 // Testimonials collapsible
 .testimonials-collapsible {
-  max-height: 300px;
+  max-height: 200px;
   overflow: hidden;
   position: relative;
   transition: max-height 0.5s ease;
@@ -846,7 +855,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 100px;
+    height: 80px;
     background: linear-gradient(transparent, rgba(0,0,0,0.95));
     pointer-events: none;
   }
