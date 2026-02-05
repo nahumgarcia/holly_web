@@ -20,16 +20,16 @@ about:
 
 # Pain points
 pain_points:
-  intro: "As an engineer or tech professional who speaks English as a second language, do any of these sound familiar to you?"
+  intro: "Sound familiar?"
   items:
     - icon: "interview.svg"
-      text: "Often people don't understand you the first time when you say something."
+      text: "People often ask you to repeat yourself."
     - icon: "presentation.svg"
-      text: "You feel self-conscious when participating in meetings, forming a phrase you've never said before, or explaining complex processes."
+      text: "You feel self-conscious in meetings or explaining complex topics."
     - icon: "c-question.svg"
-      text: "You get stuck when trying to answer tricky questions from colleagues or clients."
+      text: "You get stuck answering unexpected questions."
     - icon: "newsletter.svg"
-      text: "You don't always feel confident writing professional sounding emails."
+      text: "Writing professional emails feels uncertain."
 
   problem: "These challenges create anxiety and can hold you back from opportunities."
 
