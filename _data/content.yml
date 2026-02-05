@@ -6,9 +6,7 @@ hero:
   greeting: "Hello! I'm Holly Richmond"
   tagline: "I'm a U.S. licensed teacher of English as a Second Language with 10+ years of experience."
   description: |
-    Originally, I'm from Tulsa, Oklahoma, but I've lived and worked in Spain since 2021.
-
-    I specialize in helping engineers and tech professionals of various disciplines grow in their jobs or get hired working with international companies by advancing their communication skills in English.
+    I help engineers and tech professionals communicate confidently in English — whether you're growing in your current role or interviewing with international companies.
 
 # About
 about:
@@ -18,7 +16,7 @@ about:
   background: |
     Originally from Tulsa, Oklahoma, I've lived and worked in Spain since 2021. I specialize in helping engineers and tech professionals advance their communication skills in English, enabling them to grow in their careers or get hired by international companies.
   approach: |
-    My classes are centered around communication fluency. The primary goal is to help you develop fluency for effective workplace communication and to feel more comfortable and confident speaking in English.
+    My classes focus on practical communication fluency — not textbook grammar.
 
 # Pain points
 pain_points:
@@ -33,11 +31,11 @@ pain_points:
     - icon: "newsletter.svg"
       text: "You don't always feel confident writing professional sounding emails."
 
-  problem: "These challenges can give you a lot of anxiety about English in the workplace. You may think that if you don't improve, you'll get stuck or lose opportunities."
+  problem: "These challenges create anxiety and can hold you back from opportunities."
 
-  solution: "Don't worry - these are common problems that I can help you solve."
+  solution: "I can help you overcome them."
 
-  outcome: "With my classes, you can significantly improve your English communication skills. Your coworkers and clients will be able to understand you clearly, you will expand your English vocabulary to better express yourself, and you'll have the confidence to participate in interviews and meetings, as well as write professional emails in English."
+  outcome: "You'll communicate clearly, expand your vocabulary, and gain the confidence to participate in meetings, interviews, and write professional emails."
 
 # Services / Methodology
 services:
