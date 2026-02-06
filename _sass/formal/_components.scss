@@ -718,7 +718,8 @@
 }
 
 .contact-form-wrapper {
-  background: rgba(255, 255, 255, 0.03);
+  background: $color-bg;
+  border: 1px solid $color-border;
   border-radius: $border-radius-lg;
   padding: $spacing-xl;
 
@@ -749,16 +750,16 @@
   select,
   textarea {
     padding: $spacing-md;
-    background: #e8e8e8;
-    border: 2px solid #ccc;
+    background: #ffffff;
+    border: 1px solid $color-border;
     border-radius: $border-radius;
-    color: #222;
+    color: $color-text;
     font-family: $font-body;
     font-size: $font-size-base;
     transition: border-color 0.2s, box-shadow 0.2s;
 
     &::placeholder {
-      color: #666;
+      color: $color-text-light;
     }
 
     &:focus {
