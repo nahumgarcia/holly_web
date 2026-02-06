@@ -1,7 +1,7 @@
 # Site settings
 title: Holly Richmond - English Classes
 description: English classes for engineers and tech professionals. Improve your workplace communication with a US-licensed ESL teacher.
-url: "" # Will be set when domain is purchased
+url: "https://speakwithholly.com"
 baseurl: ""
 
 # Author
