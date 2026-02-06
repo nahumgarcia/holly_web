@@ -89,10 +89,17 @@
 
 .btn--primary {
   background: $color-primary;
+  border: 2px solid $color-primary;
   color: $color-text-inverse;
+  border-radius: 50px;
+  padding: $spacing-xs $spacing-lg;
+  font-size: $font-size-sm;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 
   &:hover {
     background: $color-primary-light;
+    border-color: $color-primary-light;
     color: $color-text-inverse;
   }
 }
