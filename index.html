@@ -8,14 +8,30 @@ description: English classes for engineers and tech professionals. Improve your 
 <section class="hero">
   <div class="container">
     <div class="hero-content">
+      <p class="hero-eyebrow">{{ site.data.content.hero.eyebrow }}</p>
       <h1 class="hero-title">{{ site.data.content.hero.greeting }}</h1>
       <p class="hero-subtitle">{{ site.data.content.hero.tagline }}</p>
       <div class="hero-description">
         {{ site.data.content.hero.description | markdownify }}
         {{ site.data.content.about.approach | markdownify }}
       </div>
-      <a href="#services" class="btn btn--outline">My services</a>
+      <div class="btn-group">
+        <a href="#companies" class="btn btn--primary">{{ site.data.content.companies.cta }}</a>
+        <a href="#services" class="btn btn--outline">See individual classes</a>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- Social proof -->
+<section class="proof-strip">
+  <div class="container">
+    <p class="proof-strip-intro">{{ site.data.content.proof.intro }}</p>
+    <p class="proof-strip-companies">
+      {% for company in site.data.content.proof.companies %}
+      <span>{{ company }}</span>{% unless forloop.last %}<span class="proof-strip-dot">&middot;</span>{% endunless %}
+      {% endfor %}
+    </p>
   </div>
 </section>
 
@@ -64,6 +80,27 @@ description: English classes for engineers and tech professionals. Improve your 
   </div>
 </section>
 
+<!-- For Companies -->
+<section class="section companies-section" id="companies">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">{{ site.data.content.companies.eyebrow }}</p>
+      <h2>{{ site.data.content.companies.title }}</h2>
+      <p>{{ site.data.content.companies.intro }}</p>
+    </div>
+
+    <div class="company-points">
+      {% for point in site.data.content.companies.points %}
+      <div class="company-point">{{ point }}</div>
+      {% endfor %}
+    </div>
+
+    <div class="companies-cta">
+      <a href="#contact" class="btn btn--primary">{{ site.data.content.companies.cta }}</a>
+    </div>
+  </div>
+</section>
+
 <!-- Student Stories -->
 <section class="section stories-highlight">
   <div class="container">
@@ -100,7 +137,7 @@ description: English classes for engineers and tech professionals. Improve your 
     </div>
 
     <div class="services-grid">
-      <div class="services-card services-card--featured">
+      <div class="services-card">
         <h3 class="services-title">{{ site.data.content.pricing.individual.title }}</h3>
         <table class="services-table">
           {% for plan in site.data.content.pricing.individual.plans %}
@@ -116,17 +153,16 @@ description: English classes for engineers and tech professionals. Improve your 
       </div>
 
       <div class="services-card">
-        <h3 class="services-title">{{ site.data.content.pricing.group.title }}</h3>
-        <table class="services-table">
-          {% for plan in site.data.content.pricing.group.plans %}
-          <tr>
-            <td>{{ plan.name }}</td>
-            <td>&euro;{{ plan.price }}/{{ plan.unit }}</td>
-          </tr>
+        <h3 class="services-title">{{ site.data.content.pricing.teams.title }}</h3>
+        <p class="services-description">{{ site.data.content.pricing.teams.description }}</p>
+        <ul class="services-points">
+          {% for point in site.data.content.pricing.teams.points %}
+          <li>{{ point }}</li>
           {% endfor %}
-        </table>
+        </ul>
+        <div class="services-price-label">{{ site.data.content.pricing.teams.price_label }}</div>
         <div class="services-cta">
-          <a href="#contact" class="btn btn--outline">I'm interested</a>
+          <a href="#contact" class="btn btn--outline">{{ site.data.content.pricing.teams.cta }}</a>
         </div>
       </div>
     </div>
@@ -154,8 +190,8 @@ description: English classes for engineers and tech professionals. Improve your 
             {{ testimonial.quote }}
           </div>
           <div class="testimonial-author">
-            <div class="testimonial-name">{{ testimonial.name }}</div>
-            <div class="testimonial-role">{{ testimonial.role }} at {{ testimonial.company }}</div>
+            <div class="testimonial-role">{{ testimonial.role }} at <strong>{{ testimonial.company }}</strong></div>
+            <div class="testimonial-name">&mdash; {{ testimonial.name }}</div>
           </div>
         </div>
         {% endfor %}
@@ -268,6 +304,46 @@ description: English classes for engineers and tech professionals. Improve your 
           {{ site.data.content.services.enroll.answer | markdownify }}
         </div>
       </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>{{ site.data.content.services.team_training.question }}</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          {{ site.data.content.services.team_training.answer | markdownify }}
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>{{ site.data.content.services.billing.question }}</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          {{ site.data.content.services.billing.answer | markdownify }}
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>{{ site.data.content.services.work_hours.question }}</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          {{ site.data.content.services.work_hours.answer | markdownify }}
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>{{ site.data.content.services.progress_updates.question }}</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          {{ site.data.content.services.progress_updates.answer | markdownify }}
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -313,14 +389,24 @@ description: English classes for engineers and tech professionals. Improve your 
           </div>
 
           <div class="form-group">
+            <label for="company">Company / organization (optional)</label>
+            <input type="text" name="company" id="company" placeholder="Your company name">
+          </div>
+
+          <div class="form-group">
             <label for="interest">What are you interested in?</label>
             <select name="interest" id="interest" required>
               <option value="">Select an option...</option>
               <option value="individual">Individual classes</option>
-              <option value="group">Group classes</option>
+              <option value="team">Team / company training</option>
               <option value="interview">Interview preparation</option>
               <option value="other">Other</option>
             </select>
+          </div>
+
+          <div class="form-group">
+            <label for="team_size">Number of people to train (if applicable)</label>
+            <input type="text" name="team_size" id="team_size" placeholder="e.g. 5 people">
           </div>
 
           <div class="form-group">

@@ -34,6 +34,15 @@
   }
 }
 
+.section-header .section-eyebrow {
+  font-size: $font-size-sm;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $color-accent;
+  margin-bottom: $spacing-sm;
+}
+
 // Hero - left aligned
 .hero {
   padding: $spacing-3xl 0;
@@ -45,6 +54,15 @@
 
 .hero-content {
   max-width: $container-narrow;
+}
+
+.hero-eyebrow {
+  font-size: $font-size-sm;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $color-accent;
+  margin-bottom: $spacing-md;
 }
 
 .hero-title {
@@ -69,6 +87,39 @@
   p {
     margin-bottom: $spacing-md;
   }
+}
+
+// Social proof strip
+.proof-strip {
+  padding: $spacing-xl 0 $spacing-2xl;
+  border-bottom: 1px solid $color-border;
+}
+
+.proof-strip-intro {
+  font-size: $font-size-sm;
+  color: $color-text-light;
+  margin-bottom: $spacing-md;
+}
+
+.proof-strip-companies {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $spacing-xs $spacing-md;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: $color-text-light;
+
+  span {
+    white-space: nowrap;
+  }
+}
+
+.proof-strip-dot {
+  color: $color-border;
+  font-weight: 400;
 }
 
 // Buttons
@@ -211,6 +262,32 @@
     color: $color-primary;
     margin-bottom: $spacing-md;
   }
+}
+
+// For Companies
+.company-points {
+  display: grid;
+  gap: $spacing-lg;
+  max-width: 900px;
+  margin-bottom: $spacing-2xl;
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.company-point {
+  background: $color-bg-alt;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-lg;
+  padding: $spacing-xl;
+  font-size: $font-size-base;
+  line-height: $line-height-relaxed;
+  color: $color-text;
+}
+
+.companies-cta {
+  text-align: center;
 }
 
 // Student Stories Section - Highlighted
@@ -469,6 +546,41 @@
   color: $color-text-light;
 }
 
+.services-description {
+  color: $color-text-light;
+  margin-bottom: $spacing-lg;
+}
+
+.services-points {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: $spacing-lg;
+
+  li {
+    position: relative;
+    padding-left: $spacing-lg;
+    margin-bottom: $spacing-sm;
+    color: $color-text;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.6em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: $color-primary;
+    }
+  }
+}
+
+.services-price-label {
+  font-family: $font-heading;
+  font-size: $font-size-xl;
+  color: $color-primary;
+}
+
 .services-cta {
   margin-top: auto;
   padding-top: $spacing-xl;
@@ -662,12 +774,17 @@
   padding-top: $spacing-md;
 }
 
-.testimonial-name {
+.testimonial-role {
   font-weight: 600;
   color: $color-text-inverse;
+  margin-bottom: 2px;
+
+  strong {
+    font-weight: 700;
+  }
 }
 
-.testimonial-role {
+.testimonial-name {
   font-size: $font-size-sm;
   color: rgba(255, 255, 255, 0.6);
 }
