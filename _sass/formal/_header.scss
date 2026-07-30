@@ -25,6 +25,27 @@
   }
 }
 
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+}
+
+.header-nav-link {
+  display: none;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  color: $color-text;
+
+  &:hover {
+    color: $color-primary;
+  }
+
+  @media (min-width: $breakpoint-sm) {
+    display: inline-block;
+  }
+}
+
 .nav-btn {
   display: inline-block;
   padding: $spacing-xs $spacing-lg;

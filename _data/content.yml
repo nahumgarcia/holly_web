@@ -3,10 +3,27 @@
 
 # Hero / Introduction
 hero:
+  eyebrow: "Business English coaching for engineering & tech teams"
   greeting: "Hello! I'm Holly Richmond"
   tagline: "I'm a U.S. licensed teacher of English as a Second Language with 10+ years of experience."
   description: |
-    I help engineers and tech professionals communicate confidently in English — whether you're growing in your current role or interviewing with international companies.
+    I help engineers and tech professionals — and the teams they work on — communicate with confidence in English, from client meetings to design reviews.
+
+# Social proof strip
+proof:
+  intro: "Professionals I've worked with come from companies including"
+  companies:
+    - "Google"
+    - "Airbus"
+    - "BBVA"
+    - "GitHub"
+    - "Indra"
+    - "ThyssenKrupp"
+    - "Aenor"
+    - "Garaje de Ideas"
+    - "Kastner"
+    - "Sold Out"
+    - "Ad Pepper"
 
 # About
 about:
@@ -36,6 +53,18 @@ pain_points:
   solution: "I can help you overcome them."
 
   outcome: "You'll communicate clearly, expand your vocabulary, and gain the confidence to participate in meetings, interviews, and write professional emails."
+
+# For Companies
+companies:
+  eyebrow: "For Engineering & Tech Teams"
+  title: "When your team can't communicate clearly in English, it shows up on the roadmap."
+  intro: |
+    Miscommunication in design reviews, client calls, and cross-border stand-ups slows delivery and erodes client trust — even when the technical work is excellent. I help engineering and tech organizations close that gap with focused, role-specific coaching.
+  points:
+    - "Role-specific instruction built from your team's real documents, designs, and meetings — not generic textbooks."
+    - "Flexible cohorts: 1:1, small group, or team-wide classes, suited to current needs."
+    - "Simple logistics for managers: one invoice, a single point of contact, and regular check-ins."
+  cta: "Request a proposal for your team"
 
 # Services / Methodology
 services:
@@ -104,6 +133,22 @@ services:
     question: "What if I miss a class? Is there a makeup policy?"
     answer: "Of course! Sometimes you might have to miss a class. My policy is that we will reschedule and makeup the class within 8 weeks of missing it. However, missed classes can't be rolled over and applied to the payment for next month's classes. The monthly rate stays the same."
 
+  team_training:
+    question: "Can you train multiple people at my company?"
+    answer: "Yes. I can teach several people from the same company — whether that's separate 1:1 classes for each person, a small group together, or a mix of both, depending on what suits your team."
+
+  billing:
+    question: "How does billing work for companies?"
+    answer: "I invoice the company directly. English classes are education services, so under Spanish tax law they're exempt from VAT — invoices apply IRPF withholding instead. I handle the paperwork on my end."
+
+  work_hours:
+    question: "Can classes happen during work hours?"
+    answer: "Yes — classes are scheduled at whatever time works for your team during the workday."
+
+  progress_updates:
+    question: "Do you provide progress updates for managers?"
+    answer: "Yes, if it's helpful — I can share periodic progress updates with managers so you can see how the team is coming along."
+
 # Pricing
 pricing:
   title: "Pricing"
@@ -120,28 +165,27 @@ pricing:
       - name: "2x per week"
         price: "280"
         unit: "month"
-  group:
-    title: "Group Classes"
-    plans:
-      - name: "1x per week"
-        price: "90"
-        unit: "month/person"
-      - name: "2x per week"
-        price: "170"
-        unit: "month/person"
+  teams:
+    title: "Teams & Companies"
+    description: "Classes for teams of any size, from 1:1 to team-wide."
+    points:
+      - "Flexible scheduling, suited to current needs"
+      - "One invoice, a single point of contact, and regular check-ins"
+    price_label: "Custom quote"
+    cta: "Request a quote"
 
 # Testimonials
 testimonials:
   title: "What My Students Say"
   items:
-    - quote: "Es un placer recomendar a Holly, quien ha sido mi profesora de inglés durante el último año. Su método de enseñanza es claro, muy práctico y totalmente adaptado a las necesidades del alumno. Gracias a su dedicación y paciencia, he mejorado significativamente mi gramática, vocabulario y he conseguido hablar de manera fluida. Holly crea un ambiente dinámico, divertido y ameno, lo que hace que cada clase sea una experiencia positiva en la que siempre aprendes cosas nuevas. La recomiendo sin reservas para cualquier oportunidad en la enseñanza del inglés."
-      name: "David"
-      role: "Senior Frontend Developer"
-      company: "BBVA"
     - quote: "Holly es una gran profesora! La recomiendo especialmente por su conocimiento del mundo tecnológico y de ingeniería, que hace que sus contenidos se adapten muy fácilmente a tus necesidades como alumno. En mi caso me ha ayudado a dar el siguiente paso para poder comunicar con mayor fluidez en situaciones donde necesitaba más soltura, como por ejemplo presentaciones en público en Inglés."
       name: "Jorge"
       role: "Director, Office of the CISO"
       company: "Google"
+    - quote: "Es un placer recomendar a Holly, quien ha sido mi profesora de inglés durante el último año. Su método de enseñanza es claro, muy práctico y totalmente adaptado a las necesidades del alumno. Gracias a su dedicación y paciencia, he mejorado significativamente mi gramática, vocabulario y he conseguido hablar de manera fluida. Holly crea un ambiente dinámico, divertido y ameno, lo que hace que cada clase sea una experiencia positiva en la que siempre aprendes cosas nuevas. La recomiendo sin reservas para cualquier oportunidad en la enseñanza del inglés."
+      name: "David"
+      role: "Senior Frontend Developer"
+      company: "BBVA"
     - quote: "Holly is a great teacher who knows the needs in the daily routine of the engineering professionals. Her English lessons are dynamic and the teaching approach quite effective. If you want to step up in your career, Holly is the perfect professional to help you."
       name: "Jesús"
       role: "FFGA Design Engineer"
