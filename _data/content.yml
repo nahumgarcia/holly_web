@@ -7,7 +7,7 @@ hero:
   greeting: "Hello! I'm Holly Richmond"
   tagline: "I'm a U.S. licensed teacher of English as a Second Language with more than 10 years of experience."
   description: |
-    I help engineers and tech professionals — and the teams they work on — communicate with confidence in English, from client meetings to design reviews.
+    I help engineers and tech professionals, and the teams they work on, communicate with confidence in English, from client meetings to design reviews.
 
 # Social proof strip
 proof:
@@ -33,7 +33,7 @@ about:
   background: |
     Originally from Tulsa, Oklahoma, I've lived and worked in Spain since 2021. I specialize in helping engineers and tech professionals advance their communication skills in English, enabling them to grow in their careers or get hired by international companies.
   approach: |
-    My classes focus on practical communication fluency — not textbook grammar.
+    My classes focus on practical communication fluency, not textbook grammar.
 
 # Pain points
 pain_points:
