@@ -73,10 +73,8 @@
   font-size: $font-size-lg;
   line-height: $line-height-relaxed;
   max-width: 65ch;
-
-  p {
-    margin-bottom: $spacing-md;
-  }
+  color: $color-text-light;
+  margin-bottom: $spacing-lg;
 }
 
 // Social proof strip
@@ -242,10 +240,6 @@
 }
 
 // For Companies
-.section-header .companies-intro {
-  color: $color-primary-dark;
-}
-
 .company-points {
   display: grid;
   gap: $spacing-lg;

@@ -10,11 +10,7 @@ description: English classes for engineers and tech professionals. Improve your 
     <div class="hero-content">
       <p class="hero-eyebrow">{{ site.data.content.hero.eyebrow }}</p>
       <h1 class="hero-title">{{ site.data.content.hero.greeting }}</h1>
-      <div class="hero-description">
-        <p>{{ site.data.content.hero.tagline }}</p>
-        {{ site.data.content.hero.description | markdownify }}
-        {{ site.data.content.about.approach | markdownify }}
-      </div>
+      <p class="hero-description">{{ site.data.content.hero.tagline | strip }} {{ site.data.content.hero.description | strip }} {{ site.data.content.about.approach | strip }}</p>
       <div class="btn-group">
         <a href="#companies" class="btn btn--primary">{{ site.data.content.companies.cta }}</a>
         <a href="#services" class="btn btn--outline">See individual classes</a>
@@ -82,7 +78,7 @@ description: English classes for engineers and tech professionals. Improve your 
     <div class="section-header">
       <p class="section-eyebrow">{{ site.data.content.companies.eyebrow }}</p>
       <h2>{{ site.data.content.companies.title }}</h2>
-      <p class="companies-intro">{{ site.data.content.companies.intro }}</p>
+      <p>{{ site.data.content.companies.intro }}</p>
     </div>
 
     <div class="company-points">
