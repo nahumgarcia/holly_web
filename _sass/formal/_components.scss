@@ -278,6 +278,10 @@
   font-size: $font-size-base;
   color: $color-text;
   line-height: $line-height-relaxed;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-lg;
+  }
 }
 
 .companies-cta {
