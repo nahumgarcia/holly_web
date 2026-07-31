@@ -61,10 +61,13 @@ companies:
   intro: |
     Miscommunication in design reviews, client calls, and cross-border stand-ups slows delivery and erodes client trust — even when the technical work is excellent. I help engineering and tech organizations close that gap with focused, role-specific coaching.
   points:
-    - "Role-specific instruction built from your team's real documents, designs, and meetings — not generic textbooks."
-    - "Flexible cohorts: 1:1, small group, or team-wide classes, suited to current needs."
-    - "Simple logistics for managers: one invoice, a single point of contact, and regular check-ins."
-  cta: "Request a proposal for your team"
+    - icon: "file"
+      text: "Role-specific instruction built from your team's real documents, designs, and meetings — not generic textbooks."
+    - icon: "calendar"
+      text: "Flexible cohorts: 1:1, small group, or team-wide classes, suited to current needs."
+    - icon: "clipboard"
+      text: "Simple logistics for managers: one invoice, a single point of contact, and regular check-ins."
+  cta: "Request a proposal"
 
 # Services / Methodology
 services:
