@@ -242,6 +242,10 @@
 }
 
 // For Companies
+.section-header .companies-intro {
+  color: $color-primary-dark;
+}
+
 .company-points {
   display: grid;
   gap: $spacing-lg;
