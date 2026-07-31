@@ -182,10 +182,10 @@
 .pain-point {
   background: $color-bg;
   border-radius: $border-radius-lg;
-  padding: $spacing-xl;
+  padding: $spacing-lg;
   display: flex;
-  gap: $spacing-lg;
-  align-items: flex-start;
+  gap: $spacing-md;
+  align-items: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   transition: box-shadow $transition-normal, transform $transition-normal;
 
@@ -197,14 +197,18 @@
 
 .pain-point-icon {
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   background: $color-primary;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 .pain-point-text {
@@ -251,10 +255,10 @@
   background: $color-bg-alt;
   border: 1px solid $color-border;
   border-radius: $border-radius-lg;
-  padding: $spacing-xl;
+  padding: $spacing-lg;
   display: flex;
-  gap: $spacing-lg;
-  align-items: flex-start;
+  gap: $spacing-md;
+  align-items: center;
   transition: box-shadow $transition-normal, transform $transition-normal;
 
   &:hover {
@@ -265,13 +269,18 @@
 
 .company-point-icon {
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   background: $color-primary;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 .company-point-text {
