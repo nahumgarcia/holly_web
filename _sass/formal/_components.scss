@@ -243,12 +243,8 @@
 .company-points {
   display: grid;
   gap: $spacing-lg;
-  max-width: 900px;
+  max-width: 700px;
   margin-bottom: $spacing-2xl;
-
-  @media (min-width: $breakpoint-lg) {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 .company-point {
