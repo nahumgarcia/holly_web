@@ -5,9 +5,9 @@
 hero:
   eyebrow: "Business English coaching for engineering & tech teams"
   greeting: "Hello! I'm Holly Richmond"
-  tagline: "I'm a U.S. licensed teacher of English as a Second Language with 10+ years of experience."
+  tagline: "I'm a U.S. licensed teacher of English as a Second Language with more than 10 years of experience."
   description: |
-    I help engineers and tech professionals — and the teams they work on — communicate with confidence in English, from client meetings to design reviews.
+    I help engineers and tech professionals, and the teams they work on, communicate with confidence in English, from client meetings to design reviews.
 
 # Social proof strip
 proof:
@@ -33,7 +33,7 @@ about:
   background: |
     Originally from Tulsa, Oklahoma, I've lived and worked in Spain since 2021. I specialize in helping engineers and tech professionals advance their communication skills in English, enabling them to grow in their careers or get hired by international companies.
   approach: |
-    My classes focus on practical communication fluency — not textbook grammar.
+    My classes focus on practical communication fluency, not textbook grammar.
 
 # Pain points
 pain_points:
@@ -42,7 +42,7 @@ pain_points:
     - icon: "interview.svg"
       text: "People often ask you to repeat yourself."
     - icon: "presentation.svg"
-      text: "You feel self-conscious in meetings or explaining complex topics."
+      text: "You feel self-conscious in meetings or presentations."
     - icon: "c-question.svg"
       text: "You get stuck answering unexpected questions."
     - icon: "newsletter.svg"
@@ -59,12 +59,15 @@ companies:
   eyebrow: "For Engineering & Tech Teams"
   title: "When your team can't communicate clearly in English, it shows up on the roadmap."
   intro: |
-    Miscommunication in design reviews, client calls, and cross-border stand-ups slows delivery and erodes client trust — even when the technical work is excellent. I help engineering and tech organizations close that gap with focused, role-specific coaching.
+    Miscommunication in design reviews, client calls, and cross-border stand-ups slows delivery and erodes client trust, even when the technical work is excellent. I help engineering and tech organizations close that gap with focused, role-specific coaching.
   points:
-    - "Role-specific instruction built from your team's real documents, designs, and meetings — not generic textbooks."
-    - "Flexible cohorts: 1:1, small group, or team-wide classes, suited to current needs."
-    - "Simple logistics for managers: one invoice, a single point of contact, and regular check-ins."
-  cta: "Request a proposal for your team"
+    - icon: "file"
+      text: "Built from your team's real documents, designs, and meetings."
+    - icon: "calendar"
+      text: "1:1, small group, or team-wide classes."
+    - icon: "clipboard"
+      text: "One invoice, one contact, regular check-ins."
+  cta: "Request a proposal"
 
 # Services / Methodology
 services:
@@ -135,19 +138,19 @@ services:
 
   team_training:
     question: "Can you train multiple people at my company?"
-    answer: "Yes. I can teach several people from the same company — whether that's separate 1:1 classes for each person, a small group together, or a mix of both, depending on what suits your team."
+    answer: "Yes. I can teach several people from the same company, whether that's separate 1:1 classes for each person, a small group together, or a mix of both, depending on what suits your team."
 
   billing:
     question: "How does billing work for companies?"
-    answer: "I invoice the company directly. English classes are education services, so under Spanish tax law they're exempt from VAT — invoices apply IRPF withholding instead. I handle the paperwork on my end."
+    answer: "I invoice the company directly. English classes are education services, so under Spanish tax law they're exempt from VAT. Invoices apply IRPF withholding instead. I handle the paperwork on my end."
 
   work_hours:
     question: "Can classes happen during work hours?"
-    answer: "Yes — classes are scheduled at whatever time works for your team during the workday."
+    answer: "Yes, classes are scheduled at whatever time works for your team during the workday."
 
   progress_updates:
     question: "Do you provide progress updates for managers?"
-    answer: "Yes, if it's helpful — I can share periodic progress updates with managers so you can see how the team is coming along."
+    answer: "Yes, if it's helpful. I can share periodic progress updates with managers so you can see how the team is coming along."
 
 # Pricing
 pricing:
@@ -167,11 +170,10 @@ pricing:
         unit: "month"
   teams:
     title: "Teams & Companies"
-    description: "Classes for teams of any size, from 1:1 to team-wide."
-    points:
-      - "Flexible scheduling, suited to current needs"
-      - "One invoice, a single point of contact, and regular check-ins"
-    price_label: "Custom quote"
+    rows:
+      - "1:1 or team classes"
+      - "Flexible scheduling"
+      - "One invoice"
     cta: "Request a quote"
 
 # Testimonials

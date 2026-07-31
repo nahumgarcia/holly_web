@@ -69,24 +69,12 @@
   margin-bottom: $spacing-md;
 }
 
-.hero-subtitle {
-  font-size: $font-size-xl;
-  color: $color-text-light;
-  margin-bottom: $spacing-lg;
-
-  @media (min-width: $breakpoint-md) {
-    font-size: $font-size-2xl;
-  }
-}
-
 .hero-description {
   font-size: $font-size-lg;
   line-height: $line-height-relaxed;
   max-width: 65ch;
-
-  p {
-    margin-bottom: $spacing-md;
-  }
+  color: $color-text-light;
+  margin-bottom: $spacing-lg;
 }
 
 // Social proof strip
@@ -102,24 +90,11 @@
 }
 
 .proof-strip-companies {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: $spacing-xs $spacing-md;
-  font-size: $font-size-sm;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: $color-text-light;
-
-  span {
-    white-space: nowrap;
-  }
-}
-
-.proof-strip-dot {
-  color: $color-border;
-  font-weight: 400;
+  font-size: $font-size-base;
+  font-weight: 500;
+  color: $color-text;
+  line-height: $line-height-relaxed;
+  max-width: 70ch;
 }
 
 // Buttons
@@ -207,10 +182,10 @@
 .pain-point {
   background: $color-bg;
   border-radius: $border-radius-lg;
-  padding: $spacing-xl;
+  padding: $spacing-lg;
   display: flex;
-  gap: $spacing-lg;
-  align-items: flex-start;
+  gap: $spacing-md;
+  align-items: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   transition: box-shadow $transition-normal, transform $transition-normal;
 
@@ -222,14 +197,18 @@
 
 .pain-point-icon {
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   background: $color-primary;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 .pain-point-text {
@@ -268,22 +247,50 @@
 .company-points {
   display: grid;
   gap: $spacing-lg;
-  max-width: 900px;
+  max-width: 700px;
   margin-bottom: $spacing-2xl;
-
-  @media (min-width: $breakpoint-lg) {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 .company-point {
   background: $color-bg-alt;
   border: 1px solid $color-border;
   border-radius: $border-radius-lg;
-  padding: $spacing-xl;
+  padding: $spacing-lg;
+  display: flex;
+  gap: $spacing-md;
+  align-items: center;
+  transition: box-shadow $transition-normal, transform $transition-normal;
+
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+}
+
+.company-point-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: $color-primary;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.company-point-text {
   font-size: $font-size-base;
-  line-height: $line-height-relaxed;
   color: $color-text;
+  line-height: $line-height-relaxed;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-lg;
+  }
 }
 
 .companies-cta {
@@ -540,45 +547,22 @@
   }
 }
 
-.services-note {
-  margin-top: $spacing-xl;
-  font-size: $font-size-sm;
-  color: $color-text-light;
-}
-
-.services-description {
-  color: $color-text-light;
-  margin-bottom: $spacing-lg;
-}
-
-.services-points {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: $spacing-lg;
-
-  li {
-    position: relative;
-    padding-left: $spacing-lg;
-    margin-bottom: $spacing-sm;
+.services-rows {
+  .services-row {
+    padding: $spacing-sm 0;
+    border-bottom: 1px solid $color-border;
     color: $color-text;
 
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.6em;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: $color-primary;
+    &:last-child {
+      border-bottom: none;
     }
   }
 }
 
-.services-price-label {
-  font-family: $font-heading;
-  font-size: $font-size-xl;
-  color: $color-primary;
+.services-note {
+  margin-top: $spacing-xl;
+  font-size: $font-size-sm;
+  color: $color-text-light;
 }
 
 .services-cta {

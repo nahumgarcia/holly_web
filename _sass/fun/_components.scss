@@ -25,6 +25,12 @@
   text-align: center;
 }
 
+.hero-eyebrow {
+  font-family: $font-heading;
+  font-size: $font-size-base;
+  margin-bottom: $spacing-md;
+}
+
 .hero-title {
   margin-bottom: $spacing-lg;
 }
@@ -41,6 +47,28 @@
   max-width: 600px;
   margin: 0 auto $spacing-2xl;
   color: $color-text;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: $spacing-md;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+// Social proof strip
+.proof-strip {
+  text-align: center;
+}
+
+.proof-strip-intro {
+  color: $color-text-dim;
+  margin-bottom: $spacing-sm;
+}
+
+.proof-strip-companies {
+  font-family: $font-heading;
+  font-size: $font-size-lg;
 }
 
 // Buttons
@@ -387,6 +415,19 @@
 
   tr:last-child td {
     border-bottom: none;
+  }
+}
+
+.services-rows {
+  .services-row {
+    padding: $spacing-sm;
+    border-bottom: 1px solid rgba($color-neon-cyan, 0.3);
+    color: $color-text;
+    text-align: center;
+
+    &:last-child {
+      border-bottom: none;
+    }
   }
 }
 
@@ -840,6 +881,11 @@
   margin-top: auto;
   padding-top: $spacing-xl;
   text-align: center;
+}
+
+.companies-cta {
+  text-align: center;
+  margin-top: $spacing-xl;
 }
 
 // Testimonials collapsible
