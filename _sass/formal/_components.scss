@@ -546,41 +546,6 @@
   color: $color-text-light;
 }
 
-.services-description {
-  color: $color-text-light;
-  margin-bottom: $spacing-lg;
-}
-
-.services-points {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: $spacing-lg;
-
-  li {
-    position: relative;
-    padding-left: $spacing-lg;
-    margin-bottom: $spacing-sm;
-    color: $color-text;
-
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.6em;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: $color-primary;
-    }
-  }
-}
-
-.services-price-label {
-  font-family: $font-heading;
-  font-size: $font-size-xl;
-  color: $color-primary;
-}
-
 .services-cta {
   margin-top: auto;
   padding-top: $spacing-xl;

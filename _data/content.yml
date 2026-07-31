@@ -62,11 +62,11 @@ companies:
     Miscommunication in design reviews, client calls, and cross-border stand-ups slows delivery and erodes client trust — even when the technical work is excellent. I help engineering and tech organizations close that gap with focused, role-specific coaching.
   points:
     - icon: "file"
-      text: "Role-specific instruction built from your team's real documents, designs, and meetings — not generic textbooks."
+      text: "Built from your team's real documents, designs, and meetings."
     - icon: "calendar"
-      text: "Flexible cohorts: 1:1, small group, or team-wide classes, suited to current needs."
+      text: "1:1, small group, or team-wide — whatever fits."
     - icon: "clipboard"
-      text: "Simple logistics for managers: one invoice, a single point of contact, and regular check-ins."
+      text: "One invoice, one contact, regular check-ins."
   cta: "Request a proposal"
 
 # Services / Methodology
@@ -170,11 +170,13 @@ pricing:
         unit: "month"
   teams:
     title: "Teams & Companies"
-    description: "Classes for teams of any size, from 1:1 to team-wide."
-    points:
-      - "Flexible scheduling, suited to current needs"
-      - "One invoice, a single point of contact, and regular check-ins"
-    price_label: "Custom quote"
+    rows:
+      - name: "Group size"
+        value: "1:1 to team-wide"
+      - name: "Scheduling"
+        value: "Flexible"
+      - name: "Logistics"
+        value: "One invoice, single contact"
     cta: "Request a quote"
 
 # Testimonials
