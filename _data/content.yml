@@ -171,8 +171,9 @@ pricing:
   teams:
     title: "Teams & Companies"
     rows:
-      - "Flexible scheduling, suited to current needs"
-      - "One invoice, a single point of contact, and regular check-ins"
+      - "1:1 or team classes"
+      - "Flexible scheduling"
+      - "One invoice"
     cta: "Request a quote"
 
 # Testimonials
