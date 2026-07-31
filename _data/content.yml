@@ -59,12 +59,12 @@ companies:
   eyebrow: "For Engineering & Tech Teams"
   title: "When your team can't communicate clearly in English, it shows up on the roadmap."
   intro: |
-    Miscommunication in design reviews, client calls, and cross-border stand-ups slows delivery and erodes client trust — even when the technical work is excellent. I help engineering and tech organizations close that gap with focused, role-specific coaching.
+    Miscommunication in design reviews, client calls, and cross-border stand-ups slows delivery and erodes client trust, even when the technical work is excellent. I help engineering and tech organizations close that gap with focused, role-specific coaching.
   points:
     - icon: "file"
       text: "Built from your team's real documents, designs, and meetings."
     - icon: "calendar"
-      text: "1:1, small group, or team-wide — whatever fits."
+      text: "1:1, small group, or team-wide classes."
     - icon: "clipboard"
       text: "One invoice, one contact, regular check-ins."
   cta: "Request a proposal"
@@ -138,19 +138,19 @@ services:
 
   team_training:
     question: "Can you train multiple people at my company?"
-    answer: "Yes. I can teach several people from the same company — whether that's separate 1:1 classes for each person, a small group together, or a mix of both, depending on what suits your team."
+    answer: "Yes. I can teach several people from the same company, whether that's separate 1:1 classes for each person, a small group together, or a mix of both, depending on what suits your team."
 
   billing:
     question: "How does billing work for companies?"
-    answer: "I invoice the company directly. English classes are education services, so under Spanish tax law they're exempt from VAT — invoices apply IRPF withholding instead. I handle the paperwork on my end."
+    answer: "I invoice the company directly. English classes are education services, so under Spanish tax law they're exempt from VAT. Invoices apply IRPF withholding instead. I handle the paperwork on my end."
 
   work_hours:
     question: "Can classes happen during work hours?"
-    answer: "Yes — classes are scheduled at whatever time works for your team during the workday."
+    answer: "Yes, classes are scheduled at whatever time works for your team during the workday."
 
   progress_updates:
     question: "Do you provide progress updates for managers?"
-    answer: "Yes, if it's helpful — I can share periodic progress updates with managers so you can see how the team is coming along."
+    answer: "Yes, if it's helpful. I can share periodic progress updates with managers so you can see how the team is coming along."
 
 # Pricing
 pricing:
