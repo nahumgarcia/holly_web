@@ -171,12 +171,8 @@ pricing:
   teams:
     title: "Teams & Companies"
     rows:
-      - name: "Group size"
-        value: "1:1 to team-wide"
-      - name: "Scheduling"
-        value: "Flexible"
-      - name: "Logistics"
-        value: "One invoice, single contact"
+      - "Flexible scheduling, suited to current needs"
+      - "One invoice, a single point of contact, and regular check-ins"
     cta: "Request a quote"
 
 # Testimonials

@@ -540,6 +540,18 @@
   }
 }
 
+.services-rows {
+  .services-row {
+    padding: $spacing-sm 0;
+    border-bottom: 1px solid $color-border;
+    color: $color-text;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
 .services-note {
   margin-top: $spacing-xl;
   font-size: $font-size-sm;

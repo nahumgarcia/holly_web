@@ -162,14 +162,11 @@ description: English classes for engineers and tech professionals. Improve your 
 
       <div class="services-card">
         <h3 class="services-title">{{ site.data.content.pricing.teams.title }}</h3>
-        <table class="services-table">
+        <div class="services-rows">
           {% for row in site.data.content.pricing.teams.rows %}
-          <tr>
-            <td>{{ row.name }}</td>
-            <td>{{ row.value }}</td>
-          </tr>
+          <p class="services-row">{{ row }}</p>
           {% endfor %}
-        </table>
+        </div>
         <div class="services-cta">
           <a href="#contact" class="btn btn--outline">{{ site.data.content.pricing.teams.cta }}</a>
         </div>
