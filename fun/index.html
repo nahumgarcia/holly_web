@@ -8,13 +8,23 @@ permalink: /fun/
 <!-- Hero -->
 <section class="hero">
   <div class="container">
+    <p class="hero-eyebrow rainbow">🚀 {{ site.data.content.hero.eyebrow }} 🚀</p>
     <h1 class="hero-title sparkle">👋 {{ site.data.content.hero.greeting }}</h1>
-    <p class="hero-subtitle rainbow">{{ site.data.content.hero.tagline }}</p>
-    <div class="hero-description">
-      {{ site.data.content.hero.description | markdownify }}
-      {{ site.data.content.about.approach | markdownify }}
+    <p class="hero-description">{{ site.data.content.hero.tagline | strip }} {{ site.data.content.hero.description | strip }} {{ site.data.content.about.approach | strip }}</p>
+    <div class="hero-buttons">
+      <a href="#companies" class="btn btn--primary blink">🏢 {{ site.data.content.companies.cta }} 🏢</a>
+      <a href="#services" class="btn btn--outline blink">✨ See individual classes ✨</a>
     </div>
-    <a href="#services" class="btn btn--outline blink">✨ My services ✨</a>
+  </div>
+</section>
+
+<div class="divider">🏢 ⭐ 🏢 ⭐ 🏢</div>
+
+<!-- Social proof -->
+<section class="section">
+  <div class="container proof-strip">
+    <p class="proof-strip-intro">{{ site.data.content.proof.intro }}</p>
+    <p class="proof-strip-companies rainbow">{% for company in site.data.content.proof.companies %}{{ company }}{% unless forloop.last %} &middot; {% endunless %}{% endfor %}</p>
   </div>
 </section>
 
@@ -39,7 +49,7 @@ permalink: /fun/
         <div class="pain-point-icon">
           <span class="animated-emoji bounce-emoji">👥</span>
         </div>
-        <p class="pain-point-text">You feel self-conscious in meetings or explaining complex topics.</p>
+        <p class="pain-point-text">You feel self-conscious in meetings or presentations.</p>
       </div>
 
       <div class="pain-point">
@@ -61,6 +71,40 @@ permalink: /fun/
       <p>{{ site.data.content.pain_points.problem }}</p>
       <h3 class="rainbow">{{ site.data.content.pain_points.solution }}</h3>
       <p>{{ site.data.content.pain_points.outcome }}</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider">🏢 ⭐ 🏢 ⭐ 🏢</div>
+
+<!-- For Companies -->
+<section class="section section--alt" id="companies">
+  <div class="container">
+    <div class="section-header">
+      <p class="fire-text">🏢 {{ site.data.content.companies.eyebrow }} 🏢</p>
+      <h2 class="rainbow">{{ site.data.content.companies.title }}</h2>
+      <p>{{ site.data.content.companies.intro }}</p>
+    </div>
+
+    <div class="pain-points">
+      {% for point in site.data.content.companies.points %}
+      <div class="pain-point">
+        <div class="pain-point-icon">
+          <span class="animated-emoji bounce-emoji">
+            {% case point.icon %}
+            {% when "file" %}📄
+            {% when "calendar" %}📅
+            {% when "clipboard" %}✅
+            {% endcase %}
+          </span>
+        </div>
+        <p class="pain-point-text">{{ point.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="companies-cta">
+      <a href="#contact" class="btn btn--primary blink">🚀 {{ site.data.content.companies.cta }} 🚀</a>
     </div>
   </div>
 </section>
@@ -98,7 +142,7 @@ permalink: /fun/
     </div>
 
     <div class="services-grid">
-      <div class="services-card services-card--featured">
+      <div class="services-card">
         <h3 class="services-title sparkle">{{ site.data.content.pricing.individual.title }}</h3>
         <table class="services-table">
           {% for plan in site.data.content.pricing.individual.plans %}
@@ -114,17 +158,14 @@ permalink: /fun/
       </div>
 
       <div class="services-card">
-        <h3 class="services-title">{{ site.data.content.pricing.group.title }}</h3>
-        <table class="services-table">
-          {% for plan in site.data.content.pricing.group.plans %}
-          <tr>
-            <td>{{ plan.name }}</td>
-            <td>&euro;{{ plan.price }}/{{ plan.unit }}</td>
-          </tr>
+        <h3 class="services-title sparkle">{{ site.data.content.pricing.teams.title }}</h3>
+        <div class="services-rows">
+          {% for row in site.data.content.pricing.teams.rows %}
+          <p class="services-row">{{ row }}</p>
           {% endfor %}
-        </table>
+        </div>
         <div class="services-cta">
-          <a href="#contact" class="btn btn--outline blink">✨ I'm interested ✨</a>
+          <a href="#contact" class="btn btn--outline blink">🚀 {{ site.data.content.pricing.teams.cta }} 🚀</a>
         </div>
       </div>
     </div>
@@ -149,8 +190,8 @@ permalink: /fun/
             {{ testimonial.quote }}
           </div>
           <div class="testimonial-author">
-            <div class="testimonial-name rainbow">{{ testimonial.name }}</div>
-            <div class="testimonial-role">{{ testimonial.role }} at {{ testimonial.company }}</div>
+            <div class="testimonial-role rainbow">{{ testimonial.role }} at {{ testimonial.company }}</div>
+            <div class="testimonial-name">&mdash; {{ testimonial.name }}</div>
           </div>
         </div>
         {% endfor %}
@@ -265,6 +306,46 @@ permalink: /fun/
           {{ site.data.content.services.enroll.answer | markdownify }}
         </div>
       </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>🏢 {{ site.data.content.services.team_training.question }}</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          {{ site.data.content.services.team_training.answer | markdownify }}
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>💸 {{ site.data.content.services.billing.question }}</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          {{ site.data.content.services.billing.answer | markdownify }}
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>⏰ {{ site.data.content.services.work_hours.question }}</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          {{ site.data.content.services.work_hours.answer | markdownify }}
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>📈 {{ site.data.content.services.progress_updates.question }}</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          {{ site.data.content.services.progress_updates.answer | markdownify }}
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -309,14 +390,24 @@ permalink: /fun/
           </div>
 
           <div class="form-group">
+            <label for="company">🏢 Company / organization (optional)</label>
+            <input type="text" name="company" id="company" placeholder="Your company name">
+          </div>
+
+          <div class="form-group">
             <label for="interest">🎯 What are you interested in?</label>
             <select name="interest" id="interest" required>
               <option value="">Pick one!</option>
               <option value="individual">Individual classes</option>
-              <option value="group">Group classes</option>
+              <option value="team">Team / company training</option>
               <option value="interview">Interview preparation</option>
               <option value="other">Something else!</option>
             </select>
+          </div>
+
+          <div class="form-group">
+            <label for="team_size">🏢 Number of people to train (if applicable)</label>
+            <input type="text" name="team_size" id="team_size" placeholder="e.g. 5 people">
           </div>
 
           <div class="form-group">
