@@ -1,6 +1,7 @@
 .footer {
-  background: $color-bg-dark;
-  color: $color-text-inverse;
+  background: $color-bg;
+  color: $color-text;
+  border-top: 1px solid $color-border;
   padding: $spacing-3xl 0 $spacing-xl;
   margin-top: 0;
 }
@@ -23,12 +24,13 @@
     font-family: $font-heading;
     font-size: $font-size-2xl;
     font-weight: 600;
+    color: $color-primary;
     display: block;
     margin-bottom: $spacing-xs;
   }
 
   .footer-tagline {
-    color: rgba(255, 255, 255, 0.7);
+    color: $color-text-light;
     font-size: $font-size-sm;
   }
 }
@@ -42,13 +44,12 @@
   display: flex;
   align-items: center;
   gap: $spacing-xs;
-  color: $color-text-inverse;
+  color: $color-primary;
   font-size: $font-size-sm;
-  transition: opacity $transition-fast;
+  transition: color $transition-fast;
 
   &:hover {
-    opacity: 0.8;
-    color: $color-text-inverse;
+    color: $color-primary-light;
   }
 
   svg {
@@ -76,7 +77,7 @@
   flex-direction: column;
   gap: $spacing-sm;
   font-size: $font-size-sm;
-  color: rgba(255, 255, 255, 0.6);
+  color: $color-text-light;
 
   @media (min-width: $breakpoint-md) {
     flex-direction: row;
@@ -85,10 +86,10 @@
 }
 
 .footer-switch a {
-  color: rgba(255, 255, 255, 0.6);
+  color: $color-text-light;
   text-decoration: underline;
 
   &:hover {
-    color: $color-text-inverse;
+    color: $color-primary;
   }
 }

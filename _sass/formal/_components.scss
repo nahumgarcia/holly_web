@@ -11,15 +11,6 @@
   background: $color-bg-alt;
 }
 
-.section--dark {
-  background: $color-bg-dark;
-  color: $color-text-inverse;
-
-  h1, h2, h3, h4 {
-    color: $color-text-inverse;
-  }
-}
-
 .section-header {
   margin-bottom: $spacing-2xl;
   max-width: $container-narrow;
@@ -80,7 +71,6 @@
 // Social proof strip
 .proof-strip {
   padding: $spacing-xl 0 $spacing-2xl;
-  border-bottom: 1px solid $color-border;
 }
 
 .proof-strip-intro {
@@ -299,8 +289,7 @@
 
 // Student Stories Section - Highlighted
 .stories-highlight {
-  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
-  color: $color-text-inverse;
+  background: $color-bg-alt;
   position: relative;
   overflow: hidden;
 }
@@ -309,17 +298,13 @@
   max-width: $container-narrow;
   position: relative;
   z-index: 1;
-
-  h2 {
-    color: $color-text-inverse;
-  }
 }
 
 .stories-intro {
   font-size: $font-size-xl;
   margin-bottom: $spacing-xl;
   max-width: 65ch;
-  opacity: 0.95;
+  color: $color-text-light;
 }
 
 .stories-buttons {
@@ -333,7 +318,7 @@
   min-width: 220px;
   padding: $spacing-lg $spacing-xl;
   background: $color-bg;
-  border: none;
+  border: 1px solid $color-border;
   border-radius: $border-radius-lg;
   font-family: $font-heading;
   font-size: $font-size-lg;
@@ -343,7 +328,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 
   &:hover {
     transform: translateY(-3px);
@@ -528,6 +513,7 @@
 .services-rows {
   .services-row {
     padding: $spacing-sm 0;
+    margin-bottom: 0;
     border-bottom: 1px solid $color-border;
     color: $color-text;
 
@@ -653,7 +639,7 @@
     left: 0;
     right: 0;
     height: 100px;
-    background: linear-gradient(transparent, $color-bg-dark);
+    background: linear-gradient(transparent, $color-bg-alt);
     pointer-events: none;
   }
 
@@ -689,7 +675,8 @@
   padding: $spacing-xl;
   padding-left: $spacing-2xl;
   padding-top: $spacing-xl;
-  background: rgba(255, 255, 255, 0.05);
+  background: $color-bg;
+  border: 1px solid $color-border;
   border-radius: $border-radius-lg;
   position: relative;
 
@@ -702,7 +689,7 @@
 
 .testimonial-quote {
   font-style: italic;
-  color: rgba(255, 255, 255, 0.9);
+  color: $color-text;
   margin-bottom: $spacing-lg;
   line-height: $line-height-relaxed;
   font-size: $font-size-sm;
@@ -732,13 +719,13 @@
 }
 
 .testimonial-author {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid $color-border;
   padding-top: $spacing-md;
 }
 
 .testimonial-role {
   font-weight: 600;
-  color: $color-text-inverse;
+  color: $color-primary;
   margin-bottom: 2px;
 
   strong {
@@ -748,7 +735,7 @@
 
 .testimonial-name {
   font-size: $font-size-sm;
-  color: rgba(255, 255, 255, 0.6);
+  color: $color-text-light;
 }
 
 // Contact
