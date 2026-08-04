@@ -160,28 +160,20 @@
 
 // Pain Points
 .pain-points {
-  display: grid;
-  gap: $spacing-lg;
-  max-width: 900px;
-
-  @media (min-width: $breakpoint-md) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: $spacing-xl;
-  }
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
 }
 
 .pain-point {
-  background: $color-surface;
-  border: 1px solid $color-border;
-  border-radius: $border-radius-lg;
-  padding: $spacing-lg;
+  padding: $spacing-lg 0;
   display: flex;
   gap: $spacing-md;
   align-items: center;
-  transition: border-color $transition-normal;
+  border-bottom: 1px solid $color-border;
 
-  &:hover {
-    border-color: $color-primary;
+  &:last-child {
+    border-bottom: none;
   }
 }
 
@@ -235,24 +227,21 @@
 
 // For Companies
 .company-points {
-  display: grid;
-  gap: $spacing-lg;
+  display: flex;
+  flex-direction: column;
   max-width: 700px;
   margin-bottom: $spacing-2xl;
 }
 
 .company-point {
-  background: $color-surface;
-  border: 1px solid $color-border;
-  border-radius: $border-radius-lg;
-  padding: $spacing-lg;
+  padding: $spacing-lg 0;
   display: flex;
   gap: $spacing-md;
   align-items: center;
-  transition: border-color $transition-normal;
+  border-bottom: 1px solid $color-border;
 
-  &:hover {
-    border-color: $color-primary;
+  &:last-child {
+    border-bottom: none;
   }
 }
 
