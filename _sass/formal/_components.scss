@@ -12,7 +12,7 @@
 }
 
 .section-header {
-  margin-bottom: $spacing-2xl;
+  margin-bottom: $spacing-lg;
   max-width: $container-narrow;
 
   h2 {
@@ -85,6 +85,10 @@
   color: $color-text;
   line-height: $line-height-relaxed;
   max-width: 70ch;
+}
+
+.proof-strip-company {
+  white-space: nowrap;
 }
 
 // Buttons
@@ -163,17 +167,18 @@
   display: flex;
   flex-direction: column;
   max-width: 700px;
+  margin-bottom: $spacing-lg;
 }
 
 .pain-point {
-  position: relative;
-  padding: $spacing-sm 0 $spacing-sm $spacing-xl;
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  padding: $spacing-sm 0;
 
   &::before {
     content: '';
-    position: absolute;
-    left: 0;
-    top: 0.6em;
+    flex-shrink: 0;
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -194,7 +199,6 @@
 // Solution block
 .solution-block {
   max-width: $container-narrow;
-  margin: $spacing-3xl 0;
 
   p {
     font-size: $font-size-lg;
@@ -212,18 +216,18 @@
   display: flex;
   flex-direction: column;
   max-width: 700px;
-  margin-bottom: $spacing-2xl;
+  margin-bottom: $spacing-lg;
 }
 
 .company-point {
-  position: relative;
-  padding: $spacing-sm 0 $spacing-sm $spacing-xl;
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  padding: $spacing-sm 0;
 
   &::before {
     content: '';
-    position: absolute;
-    left: 0;
-    top: 0.6em;
+    flex-shrink: 0;
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -269,43 +273,56 @@
   color: $color-text-light;
 }
 
-.stories-buttons {
+.stories-list {
   display: flex;
-  gap: $spacing-lg;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: $spacing-md;
 }
 
-.story-btn {
-  flex: 1;
-  min-width: 220px;
+.story-card {
+  width: 100%;
   padding: $spacing-lg $spacing-xl;
   background: $color-surface;
   border: 1px solid $color-border;
   border-radius: $border-radius-lg;
-  font-family: $font-heading;
-  font-size: $font-size-lg;
   color: $color-primary-dark;
+  text-align: left;
   cursor: pointer;
   transition: border-color $transition-normal;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: $spacing-lg;
 
   &:hover {
     border-color: $color-primary;
   }
 }
 
-.story-btn-label {
-  font-weight: 500;
+.story-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
 }
 
-.story-btn-arrow {
+.story-card-title {
+  font-family: $font-heading;
+  font-size: $font-size-lg;
+  font-weight: 600;
+}
+
+.story-card-summary {
+  font-size: $font-size-base;
+  color: $color-text-light;
+}
+
+.story-card-arrow {
+  flex-shrink: 0;
   font-size: $font-size-xl;
   opacity: 0.5;
   transition: transform $transition-fast, opacity $transition-fast;
 
-  .story-btn:hover & {
+  .story-card:hover & {
     transform: translateX(4px);
     opacity: 1;
   }
@@ -403,7 +420,7 @@
 // Services/Pricing Section
 .services-grid {
   display: grid;
-  gap: $spacing-2xl;
+  gap: $spacing-lg;
   max-width: 800px;
 
   @media (min-width: $breakpoint-md) {
@@ -530,8 +547,8 @@
 
   .faq-icon {
     flex-shrink: 0;
-    width: 24px;
-    height: 24px;
+    width: 14px;
+    height: 14px;
     position: relative;
     margin-left: $spacing-md;
 
@@ -545,14 +562,14 @@
 
     &::before {
       width: 100%;
-      height: 2px;
+      height: 1.5px;
       top: 50%;
       left: 0;
       transform: translateY(-50%);
     }
 
     &::after {
-      width: 2px;
+      width: 1.5px;
       height: 100%;
       left: 50%;
       top: 0;
@@ -586,50 +603,16 @@
   }
 }
 
-// Testimonials collapsible
-.testimonials-collapsible {
-  max-height: 200px;
-  overflow: hidden;
-  position: relative;
-  transition: max-height 0.5s ease;
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: linear-gradient(transparent, $color-bg-alt);
-    pointer-events: none;
-  }
-
-  &.expanded {
-    max-height: 2000px;
-
-    &::after {
-      display: none;
-    }
-  }
-}
-
-.testimonials-toggle {
-  margin-top: $spacing-xl;
-  text-align: center;
-}
-
 // Testimonials (for footer)
 .testimonials-footer {
   padding: $spacing-2xl 0;
 }
 
 .testimonials-grid {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: $spacing-xl;
-
-  @media (min-width: $breakpoint-lg) {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  max-width: $container-narrow;
 }
 
 .testimonial {
@@ -649,38 +632,69 @@
 }
 
 .testimonial-quote {
-  color: $color-text;
-  margin-bottom: $spacing-lg;
-  line-height: $line-height-relaxed;
-  font-size: $font-size-base;
   position: relative;
 }
 
-.testimonial-quote-icon {
+.testimonial-quote-mark {
   position: absolute;
-  top: -1.25rem;
-  left: -1.5rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  opacity: 0.2;
+  top: 0;
+  left: -0.85rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: $font-size-base;
+  font-weight: 700;
+  color: $color-primary-dark;
+}
 
-  @media (min-width: $breakpoint-md) {
-    width: 3rem;
-    height: 3rem;
-    top: -1.5rem;
-    left: -2rem;
+.testimonial-quote-text {
+  color: $color-text;
+  line-height: $line-height-relaxed;
+  font-size: $font-size-base;
+
+  p {
+    margin-bottom: $spacing-md;
+
+    &:last-child {
+      margin-bottom: 0;
+
+      &::after {
+        content: '\201D';
+        font-family: Georgia, 'Times New Roman', serif;
+        font-weight: 700;
+        color: $color-primary-dark;
+      }
+    }
   }
 
-  svg {
-    width: 100%;
-    height: 100%;
-    fill: currentColor;
+  &.clamped {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+.testimonial-toggle {
+  display: none;
+  margin-top: $spacing-md;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: $font-body;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  color: $color-primary;
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:hover {
+    color: $color-accent;
   }
 }
 
 .testimonial-author {
-  border-top: 1px solid $color-border;
-  padding-top: $spacing-md;
+  border-bottom: 1px solid $color-border;
+  padding-bottom: $spacing-md;
+  margin-bottom: $spacing-lg;
 }
 
 .testimonial-role {

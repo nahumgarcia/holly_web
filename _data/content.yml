@@ -56,7 +56,7 @@ pain_points:
 
 # For Companies
 companies:
-  eyebrow: "For Engineering & Tech Teams"
+  eyebrow: "For Companies"
   title: "Team Training"
   intro: |
     Miscommunication in design reviews, client calls, and cross-border stand-ups slows delivery, erodes client trust, and shows up on the roadmap, even when the technical work is excellent. I help engineering and tech organizations close that gap with focused, role-specific coaching.
@@ -177,10 +177,17 @@ pricing:
 testimonials:
   title: "What My Students Say"
   items:
-    - quote: "Holly es una gran profesora! La recomiendo especialmente por su conocimiento del mundo tecnológico y de ingeniería, que hace que sus contenidos se adapten muy fácilmente a tus necesidades como alumno. En mi caso me ha ayudado a dar el siguiente paso para poder comunicar con mayor fluidez en situaciones donde necesitaba más soltura, como por ejemplo presentaciones en público en Inglés."
-      name: "Jorge"
-      role: "Director, Office of the CISO"
-      company: "Google"
+    - quote: |
+        Tras estos años de clases con Holly, quiero empezar valorando su dimensión humana. Hablar con Holly es interesante de por sí. Semana a semana, las conversaciones avanzan motivadas por el placer que da charlar con ella, el interés de sus preguntas y las maneras en que interviene para que sigas hablando naturalmente, con ganas, soltura y confianza. Sabe elegir cuándo introducir correcciones sin cortar el flujo de la conversación, en los momentos en los que más podemos aprovecharlo.
+
+        Holly te ofrece una gran flexibilidad en su forma de enseñar. En clases individuales o grupales, elige el estilo de conversación y la estructura de clases que mejor te conviene. Según lo que necesites, puedes aprovechar conversaciones más libres, o bien mantener clases más estructuradas, con un mix de actividades recurrentes y puntuales, ya sea de temas culturales, generales, o relacionados con tu profesión, incluyendo lenguaje y discurso especializado.
+
+        Holly aporta además una destreza insólita, que conectó especialmente conmigo: sabe distinguir con finura los matices entre palabras, y lo hace transmitiendo el gusto por hacerlo. Dicho así puede parecer anecdótico, pero quiero recalcar lo que aporta a una formación o entrenamiento en idiomas para profesionales: Ser realmente competente requiere encontrar términos válidos cuando no recuerdas uno más específico, pero también pulir tus expresiones para usar términos más efectivos e inequívocos. Holly cubre ambas direcciones: Te entrena en encontrar alternativas, y en elegir la más adecuada.
+
+        En resumen: Versatile teacher, sharp linguist, born conversationalist, good match, best choice and great person.
+      name: "Alberto"
+      role: "Strategic Presales Principal"
+      company: "Garaje de Ideas"
     - quote: "Es un placer recomendar a Holly, quien ha sido mi profesora de inglés durante el último año. Su método de enseñanza es claro, muy práctico y totalmente adaptado a las necesidades del alumno. Gracias a su dedicación y paciencia, he mejorado significativamente mi gramática, vocabulario y he conseguido hablar de manera fluida. Holly crea un ambiente dinámico, divertido y ameno, lo que hace que cada clase sea una experiencia positiva en la que siempre aprendes cosas nuevas. La recomiendo sin reservas para cualquier oportunidad en la enseñanza del inglés."
       name: "David"
       role: "Senior Frontend Developer"
@@ -189,12 +196,17 @@ testimonials:
       name: "Jesús"
       role: "FFGA Design Engineer"
       company: "Airbus Crisa"
+    - quote: "Holly es una gran profesora! La recomiendo especialmente por su conocimiento del mundo tecnológico y de ingeniería, que hace que sus contenidos se adapten muy fácilmente a tus necesidades como alumno. En mi caso me ha ayudado a dar el siguiente paso para poder comunicar con mayor fluidez en situaciones donde necesitaba más soltura, como por ejemplo presentaciones en público en Inglés."
+      name: "Jorge"
+      role: "Director, Office of the CISO"
+      company: "Google"
 
 # Student Stories
 stories:
   title: "Student Stories"
   items:
     - title: "Student Story #1"
+      summary: "Helping a comms engineer improve his English in meetings."
       goal:
         title: "My student's goal"
         text: |
@@ -213,6 +225,7 @@ stories:
           The advantage of personalized/specialized classes is that you can speak about specifics that you encounter at work. It might be hard to find a general English class that teaches you to speak in just the way you need to. Nowadays, J feels more comfortable and confident answering questions and speaking up in meetings. I'm very proud of his progress. If your experience with English sounds similar to J's, feel free to write me! I'd be happy to help you improve in the same way.
 
     - title: "Student Story #2"
+      summary: "Helping a mechanical engineer with his job interviews."
       goal:
         title: "My student's goal"
         text: |

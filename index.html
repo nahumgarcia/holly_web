@@ -23,7 +23,7 @@ description: English classes for engineers and tech professionals. Improve your 
 <section class="proof-strip">
   <div class="container">
     <p class="proof-strip-intro">{{ site.data.content.proof.intro }}</p>
-    <p class="proof-strip-companies">{% for company in site.data.content.proof.companies %}{{ company }}{% unless forloop.last %} &middot; {% endunless %}{% endfor %}</p>
+    <p class="proof-strip-companies">{% for company in site.data.content.proof.companies %}<span class="proof-strip-company">{{ company }}</span>{% unless forloop.last %} &middot; {% endunless %}{% endfor %}</p>
   </div>
 </section>
 
@@ -87,15 +87,16 @@ description: English classes for engineers and tech professionals. Improve your 
     <div class="stories-section">
       <h2>Student Stories</h2>
       <p class="stories-intro">Do you want to know how my classes are? Check these student stories.</p>
-      <div class="stories-buttons">
-        <button class="story-btn" onclick="openModal('story1')">
-          <span class="story-btn-label">Student Story #1</span>
-          <span class="story-btn-arrow">→</span>
+      <div class="stories-list">
+        {% for story in site.data.content.stories.items %}
+        <button class="story-card" onclick="openModal('story{{ forloop.index }}')">
+          <div class="story-card-text">
+            <span class="story-card-title">{{ story.title }}</span>
+            <span class="story-card-summary">{{ story.summary }}</span>
+          </div>
+          <span class="story-card-arrow">→</span>
         </button>
-        <button class="story-btn" onclick="openModal('story2')">
-          <span class="story-btn-label">Student Story #2</span>
-          <span class="story-btn-arrow">→</span>
-        </button>
+        {% endfor %}
       </div>
     </div>
   </div>
@@ -148,31 +149,22 @@ description: English classes for engineers and tech professionals. Improve your 
       <p>Real feedback from real students.</p>
     </div>
 
-    <div class="testimonials-collapsible" id="testimonials-container">
-      <div class="testimonials-grid">
-        {% for testimonial in site.data.content.testimonials.items %}
-        <div class="testimonial">
-          <div class="testimonial-quote">
-            <span class="testimonial-quote-icon">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11.3 5.2C7.8 7 5.6 10.1 5.6 13.6c0 2.8 1.8 4.8 4.1 4.8 2.1 0 3.8-1.7 3.8-3.9 0-2.1-1.5-3.7-3.4-3.9.3-1.9 1.8-3.7 4.2-4.9L11.3 5.2zM21 5.2c-3.5 1.8-5.7 4.9-5.7 8.4 0 2.8 1.8 4.8 4.1 4.8 2.1 0 3.8-1.7 3.8-3.9 0-2.1-1.5-3.7-3.4-3.9.3-1.9 1.8-3.7 4.2-4.9L21 5.2z"/>
-              </svg>
-            </span>
-            {{ testimonial.quote }}
-          </div>
-          <div class="testimonial-author">
-            <div class="testimonial-role">{{ testimonial.role }} at <strong>{{ testimonial.company }}</strong></div>
-            <div class="testimonial-name">&mdash; {{ testimonial.name }}</div>
+    <div class="testimonials-grid">
+      {% for testimonial in site.data.content.testimonials.items %}
+      <div class="testimonial">
+        <div class="testimonial-author">
+          <div class="testimonial-role">{{ testimonial.role }} at <strong>{{ testimonial.company }}</strong></div>
+          <div class="testimonial-name">{{ testimonial.name }}</div>
+        </div>
+        <div class="testimonial-quote">
+          <span class="testimonial-quote-mark">&ldquo;</span>
+          <div class="testimonial-quote-text">
+            {{ testimonial.quote | markdownify }}
           </div>
         </div>
-        {% endfor %}
+        <button class="testimonial-toggle" onclick="toggleTestimonialQuote(this)">Show more</button>
       </div>
-    </div>
-
-    <div class="testimonials-toggle">
-      <button class="btn btn--outline" id="testimonials-toggle-btn" onclick="toggleTestimonials()">
-        Read more
-      </button>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -436,6 +428,40 @@ description: English classes for engineers and tech professionals. Improve your 
 {% endfor %}
 
 <script>
+  // Smooth-scroll anchor links, accounting for the sticky header
+  (function() {
+    const header = document.querySelector('.header');
+
+    function easeInOutCubic(t) {
+      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        const id = this.getAttribute('href').slice(1);
+        const target = document.getElementById(id);
+        if (!target) return;
+        e.preventDefault();
+
+        const headerHeight = header ? header.offsetHeight : 0;
+        const startY = window.pageYOffset;
+        const targetY = target.getBoundingClientRect().top + startY - headerHeight - 16;
+        const distance = targetY - startY;
+        const duration = 700;
+        let startTime = null;
+
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp;
+          const progress = Math.min((timestamp - startTime) / duration, 1);
+          window.scrollTo({ top: startY + distance * easeInOutCubic(progress), left: 0, behavior: 'auto' });
+          if (progress < 1) requestAnimationFrame(step);
+        }
+
+        requestAnimationFrame(step);
+      });
+    });
+  })();
+
   // Modal functions
   function openModal(id) {
     document.getElementById(id).classList.add('active');
@@ -480,18 +506,19 @@ description: English classes for engineers and tech professionals. Improve your 
     }
   }
 
-  // Testimonials collapsible
-  function toggleTestimonials() {
-    const container = document.getElementById('testimonials-container');
-    const btn = document.getElementById('testimonials-toggle-btn');
-
-    if (container.classList.contains('expanded')) {
-      container.classList.remove('expanded');
-      btn.textContent = 'Read more';
-    } else {
-      container.classList.add('expanded');
-      btn.textContent = 'Show less';
+  // Testimonial quotes: clamp to 6 lines, only show "Show more" if actually truncated
+  document.querySelectorAll('.testimonial-quote-text').forEach(function(text) {
+    text.classList.add('clamped');
+    const toggle = text.closest('.testimonial-quote').nextElementSibling;
+    if (text.scrollHeight > text.clientHeight + 1) {
+      toggle.style.display = 'inline-block';
     }
+  });
+
+  function toggleTestimonialQuote(button) {
+    const text = button.previousElementSibling.querySelector('.testimonial-quote-text');
+    const isClamped = text.classList.toggle('clamped');
+    button.textContent = isClamped ? 'Show more' : 'Show less';
   }
 
   // Contact form
