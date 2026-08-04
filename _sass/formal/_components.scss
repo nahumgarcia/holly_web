@@ -167,29 +167,10 @@
 
 .pain-point {
   padding: $spacing-lg 0;
-  display: flex;
-  gap: $spacing-md;
-  align-items: center;
   border-bottom: 1px solid $color-border;
 
   &:last-child {
     border-bottom: none;
-  }
-}
-
-.pain-point-icon {
-  flex-shrink: 0;
-  width: 36px;
-  height: 36px;
-  background: $color-primary;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  svg {
-    width: 18px;
-    height: 18px;
   }
 }
 
@@ -229,29 +210,10 @@
 
 .company-point {
   padding: $spacing-lg 0;
-  display: flex;
-  gap: $spacing-md;
-  align-items: center;
   border-bottom: 1px solid $color-border;
 
   &:last-child {
     border-bottom: none;
-  }
-}
-
-.company-point-icon {
-  flex-shrink: 0;
-  width: 36px;
-  height: 36px;
-  background: $color-primary;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  svg {
-    width: 18px;
-    height: 18px;
   }
 }
 
