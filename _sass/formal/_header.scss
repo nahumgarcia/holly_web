@@ -46,21 +46,3 @@
   }
 }
 
-.nav-btn {
-  display: inline-block;
-  padding: $spacing-xs $spacing-lg;
-  font-size: $font-size-sm;
-  font-weight: 500;
-  color: $color-text-inverse;
-  background: $color-primary;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-radius: 50px;
-  transition: all $transition-fast;
-
-  &:hover {
-    background: $color-primary-light;
-    color: $color-text-inverse;
-  }
-}

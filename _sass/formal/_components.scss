@@ -92,6 +92,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  line-height: 1;
   padding: $spacing-sm $spacing-xl;
   font-family: $font-body;
   font-size: $font-size-base;
@@ -171,17 +172,16 @@
 
 .pain-point {
   background: $color-surface;
+  border: 1px solid $color-border;
   border-radius: $border-radius-lg;
   padding: $spacing-lg;
   display: flex;
   gap: $spacing-md;
   align-items: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  transition: box-shadow $transition-normal, transform $transition-normal;
+  transition: border-color $transition-normal;
 
   &:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
+    border-color: $color-primary;
   }
 }
 
@@ -243,17 +243,16 @@
 
 .company-point {
   background: $color-surface;
+  border: 1px solid $color-border;
   border-radius: $border-radius-lg;
   padding: $spacing-lg;
   display: flex;
   gap: $spacing-md;
   align-items: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  transition: box-shadow $transition-normal, transform $transition-normal;
+  transition: border-color $transition-normal;
 
   &:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
+    border-color: $color-primary;
   }
 }
 
@@ -298,10 +297,14 @@
   max-width: $container-narrow;
   position: relative;
   z-index: 1;
+
+  h2 {
+    margin-bottom: $spacing-sm;
+  }
 }
 
 .stories-intro {
-  font-size: $font-size-xl;
+  font-size: $font-size-lg;
   margin-bottom: $spacing-xl;
   max-width: 65ch;
   color: $color-text-light;
@@ -324,15 +327,13 @@
   font-size: $font-size-lg;
   color: $color-primary-dark;
   cursor: pointer;
-  transition: all $transition-normal;
+  transition: border-color $transition-normal;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 
   &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    border-color: $color-primary;
   }
 }
 
@@ -453,7 +454,7 @@
 
 .services-card {
   background: $color-surface;
-  border: 2px solid $color-border;
+  border: 1px solid $color-border;
   border-radius: $border-radius-lg;
   padding: $spacing-2xl;
   display: flex;
@@ -689,11 +690,10 @@
 }
 
 .testimonial-quote {
-  font-style: italic;
   color: $color-text;
   margin-bottom: $spacing-lg;
   line-height: $line-height-relaxed;
-  font-size: $font-size-sm;
+  font-size: $font-size-base;
   position: relative;
 }
 
