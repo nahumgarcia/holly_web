@@ -170,7 +170,7 @@
 }
 
 .pain-point {
-  background: $color-bg;
+  background: $color-surface;
   border-radius: $border-radius-lg;
   padding: $spacing-lg;
   display: flex;
@@ -242,17 +242,17 @@
 }
 
 .company-point {
-  background: $color-bg-alt;
-  border: 1px solid $color-border;
+  background: $color-surface;
   border-radius: $border-radius-lg;
   padding: $spacing-lg;
   display: flex;
   gap: $spacing-md;
   align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   transition: box-shadow $transition-normal, transform $transition-normal;
 
   &:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     transform: translateY(-2px);
   }
 }
@@ -317,7 +317,7 @@
   flex: 1;
   min-width: 220px;
   padding: $spacing-lg $spacing-xl;
-  background: $color-bg;
+  background: $color-surface;
   border: 1px solid $color-border;
   border-radius: $border-radius-lg;
   font-family: $font-heading;
@@ -371,7 +371,7 @@
 }
 
 .modal {
-  background: $color-bg;
+  background: $color-surface;
   border-radius: $border-radius-lg;
   max-width: 700px;
   width: 100%;
@@ -452,7 +452,7 @@
 }
 
 .services-card {
-  background: $color-bg;
+  background: $color-surface;
   border: 2px solid $color-border;
   border-radius: $border-radius-lg;
   padding: $spacing-2xl;
@@ -558,7 +558,8 @@
   border: none;
   cursor: pointer;
   text-align: left;
-  font-family: $font-heading;
+  font-family: $font-body;
+  font-weight: 600;
   font-size: $font-size-lg;
   color: $color-primary-dark;
   transition: color $transition-fast;
@@ -675,7 +676,7 @@
   padding: $spacing-xl;
   padding-left: $spacing-2xl;
   padding-top: $spacing-xl;
-  background: $color-bg;
+  background: $color-surface;
   border: 1px solid $color-border;
   border-radius: $border-radius-lg;
   position: relative;
@@ -791,7 +792,7 @@
 }
 
 .contact-form-wrapper {
-  background: $color-bg;
+  background: $color-surface;
   border: 1px solid $color-border;
   border-radius: $border-radius-lg;
   padding: $spacing-xl;

@@ -57,9 +57,9 @@ pain_points:
 # For Companies
 companies:
   eyebrow: "For Engineering & Tech Teams"
-  title: "When your team can't communicate clearly in English, it shows up on the roadmap."
+  title: "Team Training"
   intro: |
-    Miscommunication in design reviews, client calls, and cross-border stand-ups slows delivery and erodes client trust, even when the technical work is excellent. I help engineering and tech organizations close that gap with focused, role-specific coaching.
+    Miscommunication in design reviews, client calls, and cross-border stand-ups slows delivery, erodes client trust, and shows up on the roadmap, even when the technical work is excellent. I help engineering and tech organizations close that gap with focused, role-specific coaching.
   points:
     - icon: "file"
       text: "Built from your team's real documents, designs, and meetings."
