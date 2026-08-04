@@ -113,10 +113,7 @@
   border: 2px solid $color-primary;
   color: $color-text-inverse;
   border-radius: 50px;
-  padding: $spacing-xs $spacing-lg;
-  font-size: $font-size-sm;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  padding: $spacing-sm $spacing-xl;
 
   &:hover {
     background: $color-primary-light;
@@ -130,10 +127,7 @@
   border: 2px solid $color-primary;
   color: $color-primary;
   border-radius: 50px;
-  padding: $spacing-xs $spacing-lg;
-  font-size: $font-size-sm;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  padding: $spacing-sm $spacing-xl;
 
   &:hover {
     background: $color-primary;
@@ -160,6 +154,24 @@
   display: flex;
   gap: $spacing-md;
   flex-wrap: wrap;
+}
+
+.services-cta .btn {
+  width: 100%;
+}
+
+// Full-width CTAs on mobile (header nav excluded)
+@media (max-width: $breakpoint-sm - 1px) {
+  .btn-group,
+  .companies-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-group .btn,
+  .companies-cta .btn {
+    width: 100%;
+  }
 }
 
 // Pain Points
@@ -432,7 +444,7 @@
   background: $color-surface;
   border: 1px solid $color-border;
   border-radius: $border-radius-lg;
-  padding: $spacing-2xl;
+  padding: $spacing-lg $spacing-xl;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -616,19 +628,11 @@
 }
 
 .testimonial {
-  padding: $spacing-xl;
-  padding-left: $spacing-2xl;
-  padding-top: $spacing-xl;
+  padding: $spacing-lg $spacing-xl;
   background: $color-surface;
   border: 1px solid $color-border;
   border-radius: $border-radius-lg;
   position: relative;
-
-  @media (min-width: $breakpoint-md) {
-    padding: $spacing-2xl;
-    padding-left: $spacing-2xl;
-    padding-top: $spacing-2xl;
-  }
 }
 
 .testimonial-quote {

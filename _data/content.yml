@@ -205,8 +205,8 @@ testimonials:
 stories:
   title: "Student Stories"
   items:
-    - title: "Student Story #1"
-      summary: "Helping a comms engineer improve his English in meetings."
+    - title: "Comms engineer"
+      summary: "Improving his meetings."
       goal:
         title: "My student's goal"
         text: |
@@ -224,8 +224,8 @@ stories:
         text: |
           The advantage of personalized/specialized classes is that you can speak about specifics that you encounter at work. It might be hard to find a general English class that teaches you to speak in just the way you need to. Nowadays, J feels more comfortable and confident answering questions and speaking up in meetings. I'm very proud of his progress. If your experience with English sounds similar to J's, feel free to write me! I'd be happy to help you improve in the same way.
 
-    - title: "Student Story #2"
-      summary: "Helping a mechanical engineer with his job interviews."
+    - title: "Mechanical engineer"
+      summary: "Preparing job interviews."
       goal:
         title: "My student's goal"
         text: |
