@@ -9,26 +9,6 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}">
 
-  <!-- Dark mode: apply stored preference before first paint to avoid a flash -->
-  <script>
-    (function() {
-      var stored = localStorage.getItem('theme');
-      if (stored === 'dark' || stored === 'light') {
-        document.documentElement.setAttribute('data-theme', stored);
-      }
-    })();
-
-    function toggleTheme() {
-      var root = document.documentElement;
-      var current = root.getAttribute('data-theme');
-      var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      var isDark = current ? current === 'dark' : systemDark;
-      var next = isDark ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-    }
-  </script>
-
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
