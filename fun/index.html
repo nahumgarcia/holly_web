@@ -38,38 +38,24 @@ permalink: /fun/
 
     <div class="pain-points">
       <div class="pain-point">
-        <div class="pain-point-icon">
-          <span class="animated-emoji bounce-emoji">📝</span>
-        </div>
         <p class="pain-point-text">People often ask you to repeat yourself.</p>
       </div>
 
       <div class="pain-point">
-        <div class="pain-point-icon">
-          <span class="animated-emoji bounce-emoji">👥</span>
-        </div>
         <p class="pain-point-text">You feel self-conscious in meetings or presentations.</p>
       </div>
 
       <div class="pain-point">
-        <div class="pain-point-icon">
-          <span class="animated-emoji bounce-emoji">❓</span>
-        </div>
         <p class="pain-point-text">You get stuck answering unexpected questions.</p>
       </div>
 
       <div class="pain-point">
-        <div class="pain-point-icon">
-          <span class="animated-emoji bounce-emoji">📧</span>
-        </div>
         <p class="pain-point-text">Writing professional emails feels uncertain.</p>
       </div>
     </div>
 
     <div class="solution-block">
-      <p>{{ site.data.content.pain_points.problem }}</p>
-      <h3 class="rainbow">{{ site.data.content.pain_points.solution }}</h3>
-      <p>{{ site.data.content.pain_points.outcome }}</p>
+      <p>{{ site.data.content.pain_points.problem }} <strong class="rainbow">{{ site.data.content.pain_points.solution }}</strong> {{ site.data.content.pain_points.outcome }}</p>
     </div>
   </div>
 </section>
@@ -88,15 +74,6 @@ permalink: /fun/
     <div class="pain-points">
       {% for point in site.data.content.companies.points %}
       <div class="pain-point">
-        <div class="pain-point-icon">
-          <span class="animated-emoji bounce-emoji">
-            {% case point.icon %}
-            {% when "file" %}📄
-            {% when "calendar" %}📅
-            {% when "clipboard" %}✅
-            {% endcase %}
-          </span>
-        </div>
         <p class="pain-point-text">{{ point.text }}</p>
       </div>
       {% endfor %}
@@ -116,15 +93,16 @@ permalink: /fun/
     <div class="stories-section">
       <h2 class="sparkle">~* Student Stories *~</h2>
       <p class="stories-intro">Do you want to know how my classes are? Check these student stories!! <span class="blink">WOW!</span></p>
-      <div class="stories-buttons">
-        <button class="story-btn pulse" onclick="openModal('story1')">
-          <span class="story-btn-label">🌟 Student Story #1 🌟</span>
-          <span class="story-btn-arrow">→</span>
+      <div class="stories-list">
+        {% for story in site.data.content.stories.items %}
+        <button class="story-card pulse" onclick="openModal('story{{ forloop.index }}')">
+          <div class="story-card-text">
+            <span class="story-card-title">🌟 {{ story.title }} 🌟</span>
+            <span class="story-card-summary">{{ story.summary }}</span>
+          </div>
+          <span class="story-card-arrow">→</span>
         </button>
-        <button class="story-btn pulse" onclick="openModal('story2')">
-          <span class="story-btn-label">🌟 Student Story #2 🌟</span>
-          <span class="story-btn-arrow">→</span>
-        </button>
+        {% endfor %}
       </div>
     </div>
   </div>
@@ -181,26 +159,22 @@ permalink: /fun/
       <p>Real feedback from real students!! <span class="blink">WOW!</span></p>
     </div>
 
-    <div class="testimonials-collapsible" id="testimonials-container">
-      <div class="testimonials-grid">
-        {% for testimonial in site.data.content.testimonials.items %}
-        <div class="testimonial">
-          <div class="testimonial-quote">
-            {{ testimonial.quote }}
-          </div>
-          <div class="testimonial-author">
-            <div class="testimonial-role rainbow">{{ testimonial.role }} at {{ testimonial.company }}</div>
-            <div class="testimonial-name">{{ testimonial.name }}</div>
+    <div class="testimonials-grid">
+      {% for testimonial in site.data.content.testimonials.items %}
+      <div class="testimonial">
+        <div class="testimonial-author">
+          <div class="testimonial-role rainbow">{{ testimonial.role }} at {{ testimonial.company }}</div>
+          <div class="testimonial-name">{{ testimonial.name }}</div>
+        </div>
+        <div class="testimonial-quote">
+          <span class="testimonial-quote-mark">&ldquo;</span>
+          <div class="testimonial-quote-text">
+            {{ testimonial.quote | markdownify }}
           </div>
         </div>
-        {% endfor %}
+        <button class="testimonial-toggle" onclick="toggleTestimonialQuote(this)">Show more</button>
       </div>
-    </div>
-
-    <div class="testimonials-toggle">
-      <button class="btn btn--secondary" id="testimonials-toggle-btn" onclick="toggleTestimonials()">
-        🔽 Read more 🔽
-      </button>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -547,18 +521,19 @@ permalink: /fun/
     }
   }
 
-  // Testimonials collapsible
-  function toggleTestimonials() {
-    const container = document.getElementById('testimonials-container');
-    const btn = document.getElementById('testimonials-toggle-btn');
-
-    if (container.classList.contains('expanded')) {
-      container.classList.remove('expanded');
-      btn.innerHTML = '🔽 Read more 🔽';
-    } else {
-      container.classList.add('expanded');
-      btn.innerHTML = '🔼 Show less 🔼';
+  // Testimonial quotes: clamp to 6 lines, only show "Show more" if actually truncated
+  document.querySelectorAll('.testimonial-quote-text').forEach(function(text) {
+    text.classList.add('clamped');
+    const toggle = text.closest('.testimonial-quote').nextElementSibling;
+    if (text.scrollHeight > text.clientHeight + 1) {
+      toggle.style.display = 'inline-block';
     }
+  });
+
+  function toggleTestimonialQuote(button) {
+    const text = button.previousElementSibling.querySelector('.testimonial-quote-text');
+    const isClamped = text.classList.toggle('clamped');
+    button.textContent = isClamped ? 'Show more' : 'Show less';
   }
 
   // Contact form

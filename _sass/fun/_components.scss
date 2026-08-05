@@ -56,6 +56,21 @@
   justify-content: center;
 }
 
+// Full-width CTAs on mobile (header nav excluded)
+@media (max-width: $breakpoint-sm - 1px) {
+  .hero-buttons,
+  .companies-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-buttons .btn,
+  .companies-cta .btn,
+  .services-cta .btn {
+    width: 100%;
+  }
+}
+
 // Social proof strip
 .proof-strip {
   text-align: center;
@@ -126,34 +141,26 @@
 
 // Pain Points
 .pain-points {
-  display: grid;
-  gap: $spacing-xl;
-
-  @media (min-width: $breakpoint-md) {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+  margin-bottom: $spacing-lg;
 }
 
 .pain-point {
   display: flex;
+  align-items: center;
   gap: $spacing-md;
-  align-items: flex-start;
-  padding: $spacing-lg;
-  border: 2px solid $color-neon-purple;
-  box-shadow: 0 0 10px $color-neon-purple;
-  background: rgba(0, 0, 0, 0.5);
-}
+  padding: $spacing-sm 0;
 
-.pain-point-icon {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  filter: drop-shadow(0 0 5px $color-neon-cyan);
-
-  img {
-    width: 100%;
-    height: 100%;
-    filter: brightness(0) invert(1);
+  &::before {
+    content: '';
+    flex-shrink: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: $color-neon-green;
+    box-shadow: 0 0 8px $color-neon-green;
   }
 }
 
@@ -164,24 +171,11 @@
 
 // Solution block
 .solution-block {
-  margin: $spacing-2xl 0;
-  padding: $spacing-xl;
-  border: 2px solid $color-neon-yellow;
-  background: rgba(0, 0, 0, 0.6);
-  box-shadow: 0 0 15px rgba($color-neon-yellow, 0.3);
+  max-width: 700px;
 
   p {
     font-size: $font-size-lg;
     line-height: 1.7;
-    margin-bottom: $spacing-lg;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  h3 {
-    margin-bottom: $spacing-md;
   }
 }
 
@@ -206,47 +200,60 @@
   color: $color-text;
 }
 
-.stories-buttons {
+.stories-list {
   display: flex;
-  gap: $spacing-lg;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  gap: $spacing-md;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.story-btn {
-  flex: 1;
-  min-width: 220px;
-  max-width: 300px;
+.story-card {
+  width: 100%;
   padding: $spacing-lg $spacing-xl;
   background: rgba(0, 0, 0, 0.7);
   border: 3px solid $color-neon-green;
   font-family: $font-heading;
-  font-size: $font-size-lg;
   color: $color-neon-green;
   cursor: pointer;
   transition: all 0.3s;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: $spacing-lg;
+  text-align: left;
   box-shadow: 0 0 15px rgba($color-neon-green, 0.3);
 
   &:hover {
     background: $color-neon-green;
     color: $color-bg;
     box-shadow: 0 0 30px $color-neon-green;
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
 }
 
-.story-btn-label {
-  font-weight: bold;
+.story-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
 }
 
-.story-btn-arrow {
+.story-card-title {
+  font-weight: bold;
+  font-size: $font-size-lg;
+}
+
+.story-card-summary {
+  font-size: $font-size-base;
+  opacity: 0.85;
+}
+
+.story-card-arrow {
+  flex-shrink: 0;
   font-size: $font-size-xl;
   transition: transform 0.3s;
 
-  .story-btn:hover & {
+  .story-card:hover & {
     transform: translateX(5px);
   }
 }
@@ -630,8 +637,10 @@
 
 // Testimonials
 .testimonials-grid {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: $spacing-xl;
+  max-width: 700px;
 }
 
 .testimonial {
@@ -639,29 +648,85 @@
   padding: $spacing-xl;
   background: rgba(0, 0, 0, 0.6);
   box-shadow: 0 0 15px rgba($color-neon-purple, 0.3);
+  position: relative;
 }
 
 .testimonial-quote {
+  position: relative;
+}
+
+.testimonial-quote-mark {
+  position: absolute;
+  top: 0;
+  left: -0.85rem;
+  font-family: $font-heading;
+  font-size: $font-size-base;
+  font-weight: bold;
+  color: $color-neon-pink;
+  text-shadow: 0 0 8px $color-neon-pink;
+}
+
+.testimonial-quote-text {
   font-style: italic;
   color: $color-text;
-  margin-bottom: $spacing-lg;
   line-height: 1.7;
-  position: relative;
   text-align: left;
+
+  p {
+    margin-bottom: $spacing-md;
+
+    &:last-child {
+      margin-bottom: 0;
+
+      &::after {
+        content: '”';
+        font-family: $font-heading;
+        font-weight: bold;
+        color: $color-neon-pink;
+        text-shadow: 0 0 8px $color-neon-pink;
+      }
+    }
+  }
+
+  &.clamped {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+.testimonial-toggle {
+  display: none;
+  margin-top: $spacing-md;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: $font-body;
+  font-size: $font-size-sm;
+  font-weight: bold;
+  color: $color-neon-cyan;
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:hover {
+    color: $color-neon-pink;
+  }
 }
 
 .testimonial-author {
-  border-top: 1px solid $color-neon-purple;
-  padding-top: $spacing-md;
-}
-
-.testimonial-name {
-  font-family: $font-heading;
-  font-weight: bold;
-  color: $color-neon-pink;
+  border-bottom: 1px solid $color-neon-purple;
+  padding-bottom: $spacing-md;
+  margin-bottom: $spacing-lg;
 }
 
 .testimonial-role {
+  font-weight: bold;
+  color: $color-neon-pink;
+  margin-bottom: 2px;
+}
+
+.testimonial-name {
   font-size: $font-size-sm;
   color: $color-text-dim;
 }
@@ -887,38 +952,6 @@
 .companies-cta {
   text-align: center;
   margin-top: $spacing-xl;
-}
-
-// Testimonials collapsible
-.testimonials-collapsible {
-  max-height: 200px;
-  overflow: hidden;
-  position: relative;
-  transition: max-height 0.5s ease;
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 80px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.95));
-    pointer-events: none;
-  }
-
-  &.expanded {
-    max-height: 2000px;
-
-    &::after {
-      display: none;
-    }
-  }
-}
-
-.testimonials-toggle {
-  margin-top: $spacing-lg;
-  text-align: center;
 }
 
 // Special effects
