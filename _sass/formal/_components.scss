@@ -411,6 +411,7 @@
 .modal-body {
   padding: $spacing-xl;
   overflow-y: auto;
+  overscroll-behavior: contain;
 
   h4 {
     color: $color-primary;
