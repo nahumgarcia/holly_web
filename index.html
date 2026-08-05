@@ -464,11 +464,13 @@ description: English classes for engineers and tech professionals. Improve your 
   // Modal functions
   function openModal(id) {
     document.getElementById(id).classList.add('active');
+    document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
   }
 
   function closeModal(id) {
     document.getElementById(id).classList.remove('active');
+    document.documentElement.style.overflow = '';
     document.body.style.overflow = '';
   }
 
