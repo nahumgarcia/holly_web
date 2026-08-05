@@ -802,7 +802,7 @@
   select,
   textarea {
     padding: $spacing-md;
-    background: #ffffff;
+    background: $color-surface;
     border: 1px solid $color-border;
     border-radius: $border-radius;
     color: $color-text;
@@ -817,17 +817,27 @@
     &:focus {
       outline: none;
       border-color: $color-primary;
-      box-shadow: 0 0 0 3px rgba($color-primary, 0.2);
+      box-shadow: 0 0 0 3px rgba(#{$color-primary-rgb}, 0.2);
     }
   }
 
   select {
     cursor: pointer;
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23ffffff' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%231c1a17' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right $spacing-md center;
     padding-right: $spacing-2xl;
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) & {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23f5f2ec' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+      }
+    }
+  }
+
+  :root[data-theme="dark"] & select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23f5f2ec' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
   }
 
   textarea {
@@ -846,7 +856,7 @@
   text-align: center;
 
   &--success {
-    background: rgba($color-primary, 0.1);
+    background: rgba(#{$color-primary-rgb}, 0.1);
     border: 1px solid $color-primary;
 
     p {
