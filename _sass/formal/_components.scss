@@ -178,33 +178,31 @@
 .pain-points {
   display: flex;
   flex-direction: column;
+  gap: $spacing-md;
   max-width: 700px;
   margin-bottom: $spacing-lg;
 }
 
 .pain-point {
-  display: flex;
-  align-items: center;
-  gap: $spacing-md;
-  padding: $spacing-sm 0;
+  padding: $spacing-lg;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-lg;
 
-  &::before {
-    content: '';
-    flex-shrink: 0;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: $color-primary;
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-lg $spacing-xl;
   }
 }
 
 .pain-point-text {
-  font-size: $font-size-base;
+  font-size: $font-size-lg;
+  font-weight: 600;
   color: $color-text;
   line-height: $line-height-relaxed;
 
-  @media (min-width: $breakpoint-md) {
-    font-size: $font-size-lg;
+  strong {
+    font-weight: 600;
+    color: $color-accent;
   }
 }
 
@@ -233,27 +231,33 @@
 
 .company-point {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: $spacing-md;
   padding: $spacing-sm 0;
 
   &::before {
-    content: '';
+    content: '\2713';
     flex-shrink: 0;
-    width: 10px;
-    height: 10px;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
     border-radius: 50%;
     background: $color-primary;
+    color: $color-text-inverse;
+    font-size: 0.8rem;
+    font-weight: 700;
   }
 }
 
 .company-point-text {
-  font-size: $font-size-base;
+  font-size: $font-size-lg;
   color: $color-text;
   line-height: $line-height-relaxed;
 
-  @media (min-width: $breakpoint-md) {
-    font-size: $font-size-lg;
+  strong {
+    font-weight: 600;
+    color: $color-primary;
   }
 }
 
@@ -289,6 +293,11 @@
   display: flex;
   flex-direction: column;
   gap: $spacing-md;
+
+  @media (min-width: $breakpoint-md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .story-card {
@@ -397,7 +406,7 @@
 .modal-close {
   background: none;
   border: none;
-  font-size: $font-size-2xl;
+  font-size: $font-size-xl;
   cursor: pointer;
   color: $color-text-light;
   padding: 0;
@@ -471,8 +480,7 @@
 }
 
 .services-title {
-  font-family: $font-heading;
-  font-size: $font-size-2xl;
+  font-size: $font-size-xl;
   margin-bottom: $spacing-xl;
 }
 
@@ -644,7 +652,7 @@
   position: absolute;
   top: 0;
   left: -0.85rem;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: $font-serif;
   font-size: $font-size-base;
   font-weight: 700;
   color: $color-primary-dark;
@@ -654,6 +662,8 @@
   color: $color-text;
   line-height: $line-height-relaxed;
   font-size: $font-size-base;
+  font-family: $font-serif;
+  font-weight: 430;
 
   p {
     margin-bottom: $spacing-md;
@@ -663,7 +673,7 @@
 
       &::after {
         content: '\201D';
-        font-family: Georgia, 'Times New Roman', serif;
+        font-family: $font-serif;
         font-weight: 700;
         color: $color-primary-dark;
       }
@@ -672,7 +682,7 @@
 
   &.clamped {
     display: -webkit-box;
-    -webkit-line-clamp: 6;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
