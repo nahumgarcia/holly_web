@@ -52,7 +52,7 @@ pain_points:
 
   solution: "I can help you overcome them."
 
-  outcome: "You'll communicate clearly, expand your vocabulary, and gain the confidence to participate in meetings, interviews, and write professional emails."
+  outcome: "You'll communicate clearly, expand your vocabulary, and gain the confidence to participate in meetings, interviews, and small talk."
 
 # For Companies
 companies:
@@ -61,9 +61,12 @@ companies:
   intro: |
     Miscommunication in design reviews, client calls, and cross-border stand-ups slows delivery, erodes client trust, and shows up on the roadmap, even when the technical work is excellent. I help engineering and tech organizations close that gap with focused, role-specific coaching.
   points:
-    - text: "Built from your team's real documents, designs, and meetings."
-    - text: "1:1, small group, or team-wide classes."
-    - text: "One invoice, one contact, regular check-ins."
+    - title: "Personalized."
+      text: "Instruction based on your team's real materials."
+    - title: "Flexible."
+      text: "1:1, small group, or team-wide classes."
+    - title: "Simple."
+      text: "One invoice, one contact, regular check-ins."
   cta: "Request a proposal"
 
 # Services / Methodology

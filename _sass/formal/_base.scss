@@ -47,6 +47,10 @@
 html {
   font-size: 16px;
   color-scheme: light dark;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 18px;
+  }
 }
 
 body {
