@@ -184,13 +184,11 @@
 }
 
 .pain-point {
-  padding: $spacing-lg;
-  background: $color-surface;
-  border: 1px solid $color-border;
-  border-radius: $border-radius-lg;
+  padding: $spacing-sm 0;
+  border-bottom: 1px solid $color-border;
 
-  @media (min-width: $breakpoint-md) {
-    padding: $spacing-lg $spacing-xl;
+  &:first-child {
+    border-top: 1px solid $color-border;
   }
 }
 
@@ -651,7 +649,7 @@
 .testimonial-quote-mark {
   position: absolute;
   top: 0;
-  left: -0.85rem;
+  left: -0.42rem;
   font-family: $font-serif;
   font-size: $font-size-base;
   font-weight: 700;
