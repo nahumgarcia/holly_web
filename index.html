@@ -199,6 +199,16 @@ description: English classes for engineers and tech professionals. Improve your 
 
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>{{ site.data.content.services.online.question }}</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          {{ site.data.content.services.online.answer | markdownify }}
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
           <span>{{ site.data.content.services.different.question }}</span>
           <span class="faq-icon"></span>
         </button>

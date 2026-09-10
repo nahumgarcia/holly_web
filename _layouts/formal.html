@@ -18,6 +18,10 @@
   <link rel="stylesheet" href="{{ '/assets/css/formal.css' | relative_url }}">
 
   {% seo %}
+
+  {% if page.url == "/" %}
+    {% include formal/structured-data.html %}
+  {% endif %}
 </head>
 <body>
   {% include formal/header.html %}

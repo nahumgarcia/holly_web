@@ -1,0 +1,103 @@
+{% assign faq_keys = "focus,structure,online,different,materials,levels,homework,enroll,duration,missed,team_training,billing,work_hours,progress_updates" | split: "," %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://speakwithholly.com/#holly",
+      "name": "Holly Richmond",
+      "jobTitle": "English Teacher",
+      "description": "U.S.-licensed teacher of English as a Second Language with more than 10 years of experience, specializing in business English for engineers and tech professionals.",
+      "url": "https://speakwithholly.com/",
+      "sameAs": [
+        "https://www.linkedin.com/in/holly-richmond/"
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Business English Coaching for Engineers and Tech Professionals",
+      "description": {{ site.description | jsonify }},
+      "provider": { "@id": "https://speakwithholly.com/#holly" },
+      "areaServed": "Worldwide",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Engineers and tech professionals"
+      },
+      "hoursAvailable": "Online, via video call",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Single class",
+          "price": "35",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "35",
+            "priceCurrency": "EUR",
+            "unitText": "HOUR"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "1x per week",
+          "price": "150",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "150",
+            "priceCurrency": "EUR",
+            "unitText": "MONTH"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "2x per week",
+          "price": "280",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "280",
+            "priceCurrency": "EUR",
+            "unitText": "MONTH"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Team training for companies",
+          "description": "Custom quote for 1:1, small group, or team-wide classes, billed with one invoice and one contact."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {% for key in faq_keys %}
+        {% assign item = site.data.content.services[key] %}
+        {% assign plain_answer = item.answer | markdownify | strip_html | strip_newlines | normalize_whitespace %}
+        {
+          "@type": "Question",
+          "name": {{ item.question | jsonify }},
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": {{ plain_answer | jsonify }}
+          }
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }
+    {% for testimonial in site.data.content.testimonials.items %}
+    {% assign plain_quote = testimonial.quote | markdownify | strip_html | strip_newlines | normalize_whitespace %}
+    ,{
+      "@type": "Review",
+      "itemReviewed": { "@id": "https://speakwithholly.com/#holly" },
+      "author": {
+        "@type": "Person",
+        "name": {{ testimonial.name | jsonify }}
+      },
+      "reviewBody": {{ plain_quote | jsonify }}
+    }
+    {% endfor %}
+  ]
+}
+</script>
