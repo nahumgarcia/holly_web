@@ -92,6 +92,10 @@ services:
 
       I also like to make some time for small talk to learn about your interests and passions.
 
+  online:
+    question: "Are your classes online or in person?"
+    answer: "All classes are 100% online via video call, so you can join from wherever you or your team are based."
+
   different:
     question: "What makes your approach different from traditional English classes?"
     answer: |
@@ -203,6 +207,15 @@ testimonials:
       name: "Jorge"
       role: "Director, Office of the CISO"
       company: "Google"
+    - quote: |
+        Working with Holly was an absolute pleasure. She brought a genuinely positive vibe to every session, making the learning environment engaging, encouraging, and highly productive.
+
+        She is exceptionally easy to talk to and creates a comfortable atmosphere where making mistakes feels like a natural step in learning. Her constructive approach keeps every session engaging, as she centers her lessons around practice-based scenarios directly applicable to our day-to-day workplace tasks.
+
+        She is a one of a kind professional. Any team or student would be fortunate to work with her.
+      name: "Wenceslao"
+      role: "Client Success Specialist"
+      company: "Garaje de Ideas"
 
 # Student Stories
 stories:
